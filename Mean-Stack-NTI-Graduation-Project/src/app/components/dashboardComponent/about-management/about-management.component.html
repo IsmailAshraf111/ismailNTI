@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="editH">
+      <h1 class="text-center">Edit About Page</h1>
+    </div>
+    <form (ngSubmit)="updateAbout()">
+      <div>
+        <textarea
+          [(ngModel)]="about.description"
+          name="description"
+          placeholder="Edit About Description"
+        ></textarea>
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="about.languages" name="languages" placeholder="Edit Languages" />
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="about.databases" name="databases" placeholder="Edit Databases" />
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="about.tools" name="tools" placeholder="Edit Tools" />
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="about.otherSkills" name="Other" placeholder="Edit Other" />
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="about.frameworks" name="Frameworks" placeholder="Edit Frameworks" />
+      </div>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  

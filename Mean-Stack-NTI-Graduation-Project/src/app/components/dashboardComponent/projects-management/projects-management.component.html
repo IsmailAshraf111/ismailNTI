@@ -1,0 +1,59 @@
+<div class="projects-management-container">
+  <div class="editH">
+    <h1 class="text-center">add Projects</h1>
+
+
+  </div >
+  <form [formGroup]="projectsForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="tech">Technology</label>
+      <input id="tech" formControlName="tech" type="text">
+    </div>
+
+    <div>
+      <label for="title">Title</label>
+      <input id="title" formControlName="title" type="text">
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description"></textarea>
+    </div>
+
+    <div>
+      <label for="btnOneTitle">Button 1 Title</label>
+      <input id="btnOneTitle" formControlName="btnOneTitle" type="text">
+    </div>
+
+    <div>
+      <label for="btnTwoTitle">Button 2 Title</label>
+      <input id="btnTwoTitle" formControlName="btnTwoTitle" type="text">
+    </div>
+
+    <div>
+      <label for="imgUrl">Image URL</label>
+      <input id="imgUrl" formControlName="imgUrl" type="file" (change)="onImageChange($event)">
+    </div>
+
+    <button type="submit" [disabled]="!projectsForm.valid">Submit</button>
+  </form>
+
+  <button *ngIf="projectsForm.value.id" (click)="deleteProject(projectsForm.value.id) ">Delete Project</button>
+</div>
+
+<div class="projects-list  ">
+  <div class="editH">
+    <h1>All Projects</h1>
+
+
+  </div>
+  <ul>
+    <li *ngFor="let projectt of projects">
+      <h4>{{ projectt.title }}</h4>
+      <p>{{ projectt.description }}</p>
+      <img *ngIf="projectt.imgUrl" [src]="projectt.imgUrl" alt="Project Image" class="projectt-image" />
+      <button (click)="editProject(projectt)">Edit</button>
+      <button (click)="deleteProject(projectt._id)">Delete</button>
+    </li>
+  </ul>
+</div>

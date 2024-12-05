@@ -1,0 +1,102 @@
+:root {
+  --primary: #b152da;
+  --primary-op: #b152da1a;
+  --gray: #96a2b9;
+  --gray-op: #96a2b91a;
+  --background: #262b33;
+  --white: #ffffff;
+}
+.projects .cards {
+  margin-left: 50px;
+}
+
+.titel-projects {
+  color: var(--white);
+  margin-bottom: 100px;
+}
+
+.titel-projects p {
+  color: var(--gray);
+  font-size: 1.2rem;
+}
+
+.titel-projects span {
+  color: var(--primary);
+}
+
+.decent {
+  color: var(--white);
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.decent::after {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 100%;
+  width: 80px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.decent h1 {
+  font-weight: bold;
+}
+
+.decent span {
+  color: var(--primary);
+}
+
+.btn {
+  background: none;
+  border: 1px solid var(--primary);
+  color: var(--white);
+  border-radius: 0;
+  padding: 0.6rem 1.2rem;
+}
+
+.btn:hover {
+  background-color: var(--primary-op);
+}
+
+.projects .cards .card {
+  border: 1px solid var(--gray);
+  border-radius: none !important;
+  background-color: var(--background);
+  color: var(--white);
+}
+
+.projects .cards .card .tec {
+  border: 1px solid var(--gray);
+  color: var(--gray);
+}
+
+.projects .cards .card .tec span {
+  margin-left: 10px;
+}
+
+.card-text {
+  color: var(--gray);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: var(--gray);
+}

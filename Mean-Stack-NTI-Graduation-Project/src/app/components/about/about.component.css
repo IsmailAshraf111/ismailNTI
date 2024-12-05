@@ -1,0 +1,143 @@
+:root {
+    --primary: #b152da;
+    --primary-op: #b152da1a;
+    --gray: #96a2b9;
+    --gray-op: #96a2b91a;
+    --background: #262b33;
+    --white: #ffffff;
+  }
+  
+  
+.path{
+    color: var(--white);
+    margin-top: 100px;
+}
+
+.path span{
+    color: var(--primary);
+}
+
+.path p{
+    color: var(--gray);
+
+}
+
+.about{
+    margin-top: 50px;
+}
+
+.about img{
+    max-width: 60%;
+    border-bottom: 1px solid var(--primary);
+}
+
+.content{
+    color: var(--gray);
+    margin-top: 100px;
+
+}
+
+.skil{
+
+}
+.skil h1 span{
+    color: var(--primary);
+}
+
+
+.skil {
+    color: var(--white);
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+  }
+  
+  .skil::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 100%;
+    width: 80px;
+    height: 2px;
+    background-color: var(--primary);
+  }
+
+  .skills-content{
+    color: var(--white);
+    border: 1px solid var(--gray);
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .skills-content .name{
+    border-bottom: 1px solid var(--white);
+    font-weight: bold;
+    font-size: 1.2rem;
+
+  }
+
+  .skills-content .skills-list{
+
+  }
+
+  .skills-content .skills-list .skils-name {
+    color: var(--gray);
+    font-size: 1.2rem;
+
+  }
+
+  li{
+    text-: none;
+
+  }
+
+  .square {
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--primary);
+    position: absolute;
+    z-index: -200;
+    overflow: hidden;
+    
+  }
+  
+  .square1 {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .square2 {
+    top: 40px;
+    left: 40px;
+  }
+
+  .dots-grid {
+    position: relative;
+    margin: 50px auto;
+    display: block;
+    inline-size: 250px;
+    --dots-bg-size: 26px;
+    --dot-color: var(--gray);
+    --dots-size: 3px;
+    z-index: 100;
+    right: 300px;
+
+  }
+  
+  .dots-grid:after {
+    content: "";
+    display: block;
+    inline-size: 150px;
+    block-size: 150px;
+    position: absolute;
+    inset-block-start: 10%;
+    inset-inline-end: -100px;
+  
+    background-image: radial-gradient(
+      var(--dot-color) var(--dots-size),
+      transparent 0
+    );
+    background-size: var(--dots-bg-size) var(--dots-bg-size);
+    background-position: center;
+  }
+    

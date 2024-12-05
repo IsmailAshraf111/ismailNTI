@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="editH">
+        <h1  class="text-center">Edit Contact Me</h1>
+
+
+    </div>
+    <form (submit)="updateContact()">
+      <input [(ngModel)]="contact.titleBox" placeholder="Edit Title" name="titleBox" />
+      <input [(ngModel)]="contact.description" placeholder="Edit Description" name="description" />
+      <input [(ngModel)]="contact.iconOne" placeholder="Edit Icon 1" name="iconOne" />
+      <input [(ngModel)]="contact.descIconOne" placeholder="Edit Icon 1 Title" name="descIconOne" />
+      <input [(ngModel)]="contact.iconTwo" placeholder="Edit Icon 2" name="iconTwo" />
+      <input [(ngModel)]="contact.descIconTwo" placeholder="Edit Icon 2 Title" name="descIconTwo" />
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  

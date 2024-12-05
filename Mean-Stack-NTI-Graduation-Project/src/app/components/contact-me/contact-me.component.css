@@ -1,0 +1,61 @@
+:root {
+  --primary: #b152da;
+  --primary-op: #b152da1a;
+  --gray: #96a2b9;
+  --gray-op: #96a2b91a;
+  --background: #262b33;
+  --white: #ffffff;
+}
+
+.all-contact{
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact h1 span {
+  color:var(--primary) ;
+}
+
+.contact {
+    color: var(--white);
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+  }
+  
+  .contact::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 100%;
+    width: 80px;
+    height: 2px;
+    background-color: var(--primary);
+  }
+
+  .contact-p {
+    margin-top: 50px;
+  }
+  .contact-p p {
+    color: var(--gray);
+
+  }
+
+  .message{
+    color: var(--white);
+    border: 1px solid var(--gray);
+    padding: 20px;
+    width: 20rem;
+
+  }
+
+  .message a{
+    color: var(--gray);
+    text-decoration: none;
+  }
+
+  .message a:hover{
+    color: var(--white);
+  } 

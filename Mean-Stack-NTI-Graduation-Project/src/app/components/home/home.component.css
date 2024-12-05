@@ -1,0 +1,122 @@
+.all{
+}
+.all-home {
+
+}
+
+.all-home .left {
+  color: var(--white);
+}
+.all-home .left span {
+  color: var(--primary);
+}
+.all-home .left p {
+  color: var(--gray);
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.all-home .left h1 {
+}
+.all-home .left .btn {
+  background: none;
+  border: 1px solid var(--primary);
+  color: var(--white);
+  border-radius: 0;
+}
+.all-home .left .btn:hover {
+  background-color: var(--primary-op);
+}
+.all-home .left p {
+  font-size: 1.2rem;
+}
+
+.all-home .right {
+}
+.all-home .right p {
+  border: 1px solid var(--primary);
+  color: var(--gray);
+  text-align: center;
+  width: 20rem;
+  margin-left: 50px;
+}
+.all-home .right .dots-grid p input {
+  background: none;
+}
+
+.all-home .right .dots-grid img {
+  border-bottom: 1px solid var(--primary);
+}
+
+.dots-grid {
+  position: relative;
+  margin: 50px auto;
+  display: block;
+  inline-size: 250px;
+  --dots-bg-size: 26px;
+  --dot-color: var(--gray);
+  --dots-size: 3px;
+  
+}
+
+.dots-grid:after {
+  content: "";
+  display: block;
+  inline-size: 150px;
+  block-size: 150px;
+  position: absolute;
+  inset-block-start: 10%;
+  inset-inline-end: -100px;
+
+  background-image: radial-gradient(
+    var(--dot-color) var(--dots-size),
+    transparent 0
+  );
+  background-size: var(--dots-bg-size) var(--dots-bg-size);
+  background-position: center;
+}
+
+.square {
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--primary);
+  position: absolute;
+  z-index: -200;
+}
+
+.square1 {
+  top: 10px;
+  left: 10px;
+}
+
+.square2 {
+  top: 40px;
+  left: 40px;
+}
+
+.funy-quote {
+}
+
+.funy-quote {
+  color: var(--white);
+  border: 1px solid var(--gray);
+  padding: 1.2rem;
+  position: relative;
+  max-width: 40.25rem;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.funy-quote .quteo-text {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.funy-quote .quteo-author {
+  font-size: 1.2rem;
+  color: var(--white);
+  position: absolute;
+  right: 1px;
+  bottom: -65px;
+  border: 1px solid var(--gray);
+  padding: 10px;
+}

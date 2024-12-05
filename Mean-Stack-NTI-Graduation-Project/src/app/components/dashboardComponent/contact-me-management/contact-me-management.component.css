@@ -1,0 +1,147 @@
+:root {
+    --primary: #b152da;
+    --primary-op: #b152da1a;
+    --gray: #96a2b9;
+    --gray-op: #96a2b91a;
+    --background: #262b33;
+    --white: #ffffff;
+  }
+
+.all{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.all-home-M{
+   
+
+}
+
+input{
+    margin-top: 20px;
+    width: 20rem;
+    padding: 1rem 1rem;
+    background-color: var(--primary-op);
+    border: none;
+    border: 1px solid var(--primary);
+
+
+}
+
+form{
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 40px 6px rgba(0, 0, 0, 0.1);
+  border-radius: .5rem;
+  background-color: var(--primary-op);
+    margin-top: 100px;
+    margin-bottom: 200px;
+    color: var(--primary);
+    text-align: center;
+  
+}
+
+input::placeholder{
+    color: var(--primary);
+}
+
+input:focus{
+   color:  var(--primary);
+}
+
+button{
+    margin-top: 20px;
+border: 1px solid var(--primary);
+color: var(--white);
+width: 7rem;
+padding: .5rem .5rem;
+background: none;
+
+}
+
+button:hover{
+    background-color: var(--primary-op);
+
+
+}
+
+.editH h1{
+        font-size: 3rem;
+        font-weight: bold;
+        background: linear-gradient(90deg, var(--primary), var(--gray), #b152da, var(--primary-op), var(--white), purple);
+        background-size: 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: moveBackground 3s infinite linear;
+  
+    
+
+}
+
+
+@keyframes moveBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  .square {
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--primary);
+    position: absolute;
+    z-index: -200;
+    top: 90%;
+    left: 70%;  
+  }
+
+  
+.square1 {
+  margin-top: 20px;
+
+}
+
+.square2 {
+  margin-left: 20px;
+
+
+}
+
+
+.dots-grid {
+  position: relative;
+  margin: 50px auto;
+  display: block;
+  inline-size: 250px;
+  --dots-bg-size: 26px;
+  --dot-color: var(--gray);
+  --dots-size: 3px;
+  z-index: 100;
+  right: 350px;
+  bottom: 80px;
+
+}
+
+.dots-grid:after {
+  content: "";
+  display: block;
+  inline-size: 150px;
+  block-size: 150px;
+  position: absolute;
+  inset-block-start: 10%;
+  inset-inline-end: -100px;
+
+  background-image: radial-gradient(
+    var(--dot-color) var(--dots-size),
+    transparent 0
+  );
+  background-size: var(--dots-bg-size) var(--dots-bg-size);
+  background-position: center;
+}
+  

@@ -1,0 +1,140 @@
+
+:root {
+    --primary: #b152da;
+    --primary-op: #b152da1a;
+    --gray: #96a2b9;
+    --gray-op: #96a2b91a;
+    --background: #262b33;
+    --white: #ffffff;
+  }
+  
+
+.all-login {
+    background-color: var(--BColor);
+    color: var(--BColor);
+}
+
+.login {   
+   
+
+    
+}
+
+.loginForm{
+    padding: 3rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 40px 6px rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+    background-color: var(--primary-op);
+      margin-top: 100px;
+      margin-bottom: 200px;
+      color: var(--primary);
+      text-align: center;
+    
+
+}
+
+.loginForm .btn{
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+}
+
+.loginForm  .loIn{
+    background-color: var(--primary-op) ;
+    border: 1px solid var(--primary);
+    border-radius: 0;
+    width: 15rem;
+}
+
+.loginForm input::placeholder {
+    color: var(--primary);
+}
+
+.loginForm input:focus {
+    background: none;
+    box-shadow: none;
+    color: var(--primary);
+
+
+}
+
+.all-login .checkP {
+    border: 2px solid var(--primary);
+    
+}
+
+.loginForm .link {
+    text-decoration: none;
+    color: var(--primary);
+   
+    
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--primary);
+  position: absolute;
+  z-index: -200;
+  top: 60%;
+  left: 50%;  
+}
+
+.square1 {
+    margin-top: 20px;
+  
+}
+
+.square2 {
+    margin-left: 20px;
+
+  
+}
+
+
+.dots-grid {
+    position: relative;
+    margin: 50px auto;
+    display: block;
+    inline-size: 250px;
+    --dots-bg-size: 26px;
+    --dot-color: var(--gray);
+    --dots-size: 3px;
+    z-index: 100;
+    right: 300px;
+
+  }
+  
+  .dots-grid:after {
+    content: "";
+    display: block;
+    inline-size: 150px;
+    block-size: 150px;
+    position: absolute;
+    inset-block-start: 10%;
+    inset-inline-end: -100px;
+  
+    background-image: radial-gradient(
+      var(--dot-color) var(--dots-size),
+      transparent 0
+    );
+    background-size: var(--dots-bg-size) var(--dots-bg-size);
+    background-position: center;
+  }
+    
+
+  input.ng-touched.ng-invalid{
+    border: 1px solid red !important;
+    color: red;
+  }
+  /* input.ng-touched.ng-invalid::placeholder{
+    color: red;
+    
+  } */
+
+  .msg{
+    color: red;
+    font-size: small;
+  }

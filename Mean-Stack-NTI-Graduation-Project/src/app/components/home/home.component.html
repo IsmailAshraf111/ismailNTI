@@ -1,0 +1,45 @@
+<div class="all" *ngIf="homeData">
+  <div class="container">
+    <div class="all-home row d-flex align-items-center">
+      <div class="left col-12 col-md-6 text-center text-md-start">
+        <h1 class="fw-bold">
+          {{ homeData.title }}
+          <span>{{ homeData.subtitle || "" }}</span>
+        </h1>
+        <p>{{ homeData.description }}</p>
+        <button type="button" class="btn btn-info">
+          {{ homeData.button }}
+        </button>
+      </div>
+      <div class="right col-12 col-md-6 text-center">
+        <div class="dots-grid">
+          <img
+            [src]="
+              homeData.img
+                ? 'http://localhost:3000/' + homeData.img
+                : 'http://localhost:3000/uploads/default-image.jpg'
+            "
+            alt="Home Image"
+            class="img-fluid"
+          />
+
+          <div class="square square1"></div>
+          <div class="square square2"></div>
+        </div>
+      </div>
+    </div>
+    <div class="funy-quote">
+      <div>
+        <p class="quteo-text">
+          {{ homeData.quote || "With great power comes great responsibility" }}
+        </p>
+      </div>
+      <div>
+        <p class="quteo-author">{{ homeData.quoteAuthor || "- dr who" }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-projects></app-projects>
+<app-about></app-about>
+<app-contact-me></app-contact-me>

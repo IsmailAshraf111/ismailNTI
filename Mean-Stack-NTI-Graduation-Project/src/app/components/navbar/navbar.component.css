@@ -1,0 +1,44 @@
+.navbar {
+  color: var(--gray);
+  padding: 20px !important;
+  font-size: 1.2rem;
+}
+.navbar li a:hover {
+  color: var(--white) !important;
+  font-weight: bold;
+}
+
+.navbar .logo {
+  color: var(--white);
+}
+
+.navbar #navbarSupportedContent li a {
+  color: #96a2b9;
+}
+.navbar #navbarSupportedContent li a span {
+  color: var(--primary);
+}
+
+.navbar .active {
+  color: var(--white) !important;
+  font-weight: bold;
+}
+
+.navbar .Authentication {
+  border: 1px solid var(--primary);
+  margin-left: 20px;
+}
+
+.navbar .Authentication:hover {
+  background-color: var(--primary-op);
+}
+
+
+.logout{
+  border: 1px solid var(--primary);
+  cursor: pointer;
+}
+
+.logout:hover{
+ background-color: var(--primary-op);
+}

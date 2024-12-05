@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="path">
+    <h1 class="fw-bold"><span>/</span>about-me</h1>
+    <p>who am i</p>
+  </div>
+
+  <div class="about row">
+    <div class="img col-12 col-md-6">
+      <img src="Image.png" alt="About Image" />
+    </div>
+    <div class="content col-12 col-md-6">
+      <p class="about__description">
+        {{ about.description }}
+      </p>
+    </div>
+  </div>
+
+  <div class="skil">
+    <h1 class="fw-bold"><span>#</span>skills</h1>
+  </div>
+
+  <div class="skills">
+    <div class="all-skills row">
+      <div class="skills-content col-3">
+        <div class="name">Languages</div>
+        <ul class="skills-list">
+          <li *ngFor="let lang of about.languages">{{ lang }}</li>
+        </ul>
+      </div>
+
+      <div class="skills-content col-3">
+        <div class="name">Databases</div>
+        <ul class="skills-list">
+          <li *ngFor="let db of about.databases">{{ db }}</li>
+        </ul>
+      </div>
+
+      <div class="skills-content col-3">
+        <div class="name">Other</div>
+        <ul class="skills-list">
+          <li *ngFor="let other of about.otherSkills">{{ other }}</li>
+        </ul>
+      </div>
+
+      <div class="skills-content col-3">
+        <div class="name">Tools</div>
+        <ul class="skills-list">
+          <li *ngFor="let tool of about.tools">{{ tool }}</li>
+        </ul>
+      </div>
+
+      <div class="skills-content col-3">
+        <div class="name">Frameworks</div>
+        <ul class="skills-list">
+          <li *ngFor="let framework of about.frameworks">{{ framework }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

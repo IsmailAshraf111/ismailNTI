@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="titel-projects mt-2">
+    <h1 class="fw-bold"><span>/</span>projects</h1>
+    <p>All of my projects</p>
+  </div>
+
+  <div class="decent">
+    <h1><span>#</span>decent</h1>
+  </div>
+
+  <div class="projects row mt-5">
+    <div class="cards col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let project of projects">
+      <div class="card" style="width: 18rem">
+        <img [src]="project.imgUrl" class="card-img-top" alt="..." />
+        <div class="text-center tec">
+          <span>{{ project.tech }}</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title fw-bold">{{ project.title }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+          <button class="btn btn-primary" (click)="goToLink(project.btnOneUrl)">
+            {{ project.btnOneTitle }} Live =>
+          </button>
+          <button class="btn btn-secondary m-1" (click)="goToLink(project.btnTwoUrl)">
+            {{ project.btnTwoTitle }} Github =>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

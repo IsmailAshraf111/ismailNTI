@@ -1,0 +1,51 @@
+<div class="all-login d-flex justify-content-center align-items-center">
+  <div class="login">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div class="dots-grid"></div>
+
+      <div class="loginForm">
+        <h2 class="fw-bold">Admin Login</h2>
+
+        <div class="mb-5 mt-5">
+          <input
+            type="text"
+            class="form-control loIn"
+            placeholder="username"
+            formControlName="username"
+          />
+          <div
+            class="msg"
+            *ngIf="myForm.get('username')!.invalid && myForm.get('username')!.touched"
+          >
+            *usernameis required
+          </div>
+        </div>
+        <div class="mb-3">
+          <input
+            type="password"
+            class="form-control loIn"
+            id="exampleInputPassword1"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <div
+            class="msg"
+            *ngIf="
+              myForm.get('password')!.invalid && myForm.get('password')!.touched
+            "
+          >
+            *password is required
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 fw-bold mt-4">
+          Login
+        </button>
+        <p>{{ msg }}</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="square square1"></div>
+<div class="square square2"></div>
