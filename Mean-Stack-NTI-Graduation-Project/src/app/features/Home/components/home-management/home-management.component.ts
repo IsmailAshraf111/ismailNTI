@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../services/home.service';
 
 @Component({
-  selector: 'app-home-management',
-  templateUrl: './home-management.component.html',
-  styleUrls: ['./home-management.component.css'],
+    selector: 'app-home-management',
+    templateUrl: './home-management.component.html',
+    styleUrls: ['./home-management.component.css'],
+    standalone: false
 })
 export class HomeManagementComponent implements OnInit {
   homeData: any = {};

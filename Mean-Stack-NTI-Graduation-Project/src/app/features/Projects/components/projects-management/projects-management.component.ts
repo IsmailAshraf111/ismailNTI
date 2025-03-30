@@ -4,9 +4,10 @@ import { ProjectService } from '../../services/project.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-projects-management',
-  templateUrl: './projects-management.component.html',
-  styleUrls: ['./projects-management.component.css'],
+    selector: 'app-projects-management',
+    templateUrl: './projects-management.component.html',
+    styleUrls: ['./projects-management.component.css'],
+    standalone: false
 })
 export class ProjectsManagementComponent implements OnInit {
   projectsForm!: FormGroup;

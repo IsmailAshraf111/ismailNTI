@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactMeService } from '../../services/contact-me.service';
 @Component({
-  selector: 'app-contact-me',
-  templateUrl: './contact-me.component.html',
-  styleUrls: ['./contact-me.component.css']
+    selector: 'app-contact-me',
+    templateUrl: './contact-me.component.html',
+    styleUrls: ['./contact-me.component.css'],
+    standalone: false
 })
 export class ContactMeComponent implements OnInit {
   contact: any = {};

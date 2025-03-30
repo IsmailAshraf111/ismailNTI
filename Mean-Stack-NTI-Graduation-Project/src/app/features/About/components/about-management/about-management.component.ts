@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AboutService } from '../../services/about.service';
 
 @Component({
-  selector: 'app-about-management',
-  templateUrl: './about-management.component.html',
-  styleUrls: ['./about-management.component.css'],
+    selector: 'app-about-management',
+    templateUrl: './about-management.component.html',
+    styleUrls: ['./about-management.component.css'],
+    standalone: false
 })
 export class AboutManagementComponent implements OnInit {
   about: any = {};
