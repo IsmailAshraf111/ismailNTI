@@ -3,20 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { AboutComponent } from './components/about/about.component';
-import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { NavbarComponent } from './shared/Navbar/navbar/navbar.component';
+import { HomeComponent } from './features/Home/components/home/home.component';
+import { FooterComponent } from './shared/Footer/footer/footer.component';
+import { LoginComponent } from './features/Auth/components/login/login.component';
+import { ProjectsComponent } from './features/Projects/components/projects/projects.component';
+import { AboutComponent } from './features/About/components/about/about.component';
+import { ContactMeComponent } from './features/Contact-me/components/contact-me/contact-me.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeManagementComponent } from './components/dashboardComponent/home-management/home-management.component';
-import { AboutManagementComponent } from './components/dashboardComponent/about-management/about-management.component';
-import { ContactMeManagementComponent } from './components/dashboardComponent/contact-me-management/contact-me-management.component';
-import { ProjectsManagementComponent } from './components/dashboardComponent/projects-management/projects-management.component';
-import { SidebarComponent } from './components/dashboardComponent/sidebar/sidebar.component';
-import { DashboardComponent } from './components/dashboardComponent/dashboard/dashboard.component';
+import { HomeManagementComponent } from './features/Home/components/home-management/home-management.component';
+import { AboutManagementComponent } from './features/About/components/about-management/about-management.component';
+import { ContactMeManagementComponent } from './features/Contact-me/components/contact-me-management/contact-me-management.component';
+import { ProjectsManagementComponent } from './features/Projects/components/projects-management/projects-management.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 @NgModule({
@@ -35,7 +35,6 @@ import { FormsModule } from '@angular/forms';
     ProjectsManagementComponent,
     SidebarComponent,
     DashboardComponent,
-    
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [provideHttpClient()],
