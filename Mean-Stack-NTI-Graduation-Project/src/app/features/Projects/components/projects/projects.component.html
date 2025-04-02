@@ -1,4 +1,6 @@
-<div class="container">
+
+<div class="container mt-5 mb-5">
+
   <div class="titel-projects mt-2">
     <h1 class="fw-bold"><span>/</span>projects</h1>
     <p>All of my projects</p>
@@ -9,24 +11,54 @@
   </div>
 
   <div class="projects row mt-5">
-    <div class="cards col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let project of projects">
+
+    <p-button
+      icon="pi pi-folder-plus"
+      label="Add Project"
+      routerLink="/projects-meManagement"
+      class="d-flex justify-content-center mb-4"
+    ></p-button>
+    <div
+      class="cards col-sm-6 col-md-4 col-lg-3 mb-4"
+      *ngFor="let project of projects"
+    >
       <div class="card" style="width: 18rem">
-        <img [src]="project.imgUrl" class="card-img-top" alt="..." />
+        <div class="d-flex justify-content-between align-items-center">
+          <p-button
+            icon="pi pi-trash"
+            (click)="deleteProject(project._id)"
+            class="delete-btn"
+            pTooltip="Delete Project"
+            tooltipPosition="top"
+          >
+          </p-button>
+          <p-button
+            icon="pi pi-pencil"
+            class="edit-btn"
+            pTooltip="Edit Project"
+            tooltipPosition="top"
+          ></p-button>
+        </div>
+        <img [src]="'http://localhost:3000' + project.imgUrl" />
         <div class="text-center tec">
           <span>{{ project.tech }}</span>
         </div>
         <div class="card-body">
           <h5 class="card-title fw-bold">{{ project.title }}</h5>
           <p class="card-text">{{ project.description }}</p>
-          <button class="btn btn-primary" (click)="goToLink(project.btnOneUrl)">
-            {{ project.btnOneTitle }} Live =>
+          <button class="btn btn-primary" (click)="goToLink(project.btnOneURL)">
+            Live =>
           </button>
-          <button class="btn btn-secondary m-1" (click)="goToLink(project.btnTwoUrl)">
-            {{ project.btnTwoTitle }} Github =>
+          <button
+            class="btn btn-secondary m-1"
+            (click)="goToLink(project.btnTwoURL)"
+          >
+            Github =>
           </button>
         </div>
       </div>
     </div>
+    <app-loading-spinner *ngIf="isLoading" [strokeWidth]="10" [width]="'60px'" [height]="'60px'"></app-loading-spinner>
+
   </div>
 </div>
-

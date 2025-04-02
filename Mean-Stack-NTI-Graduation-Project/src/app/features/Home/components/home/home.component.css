@@ -1,11 +1,23 @@
-.all{
+.all {
+  height: 80vh;
+  margin-bottom: 150px !important;
 }
-.all-home {
 
+.all-home {
+}
+.loading-spinner {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .all-home .left {
   color: var(--white);
+  .descriptionName{
+    color: var(--primary);
+  }
 }
 .all-home .left span {
   color: var(--primary);
@@ -23,6 +35,21 @@
   color: var(--white);
   border-radius: 0;
 }
+::ng-deep .p-button {
+  background: none !important;
+  border: 1px solid var(--primary) !important;
+  color: var(--white) !important;
+  border-radius: 0 !important;
+  margin: auto !important;
+
+  &:hover {
+    background: none !important;     
+    border-color: var(--primary) !important; 
+    color: var(--white) !important;   
+    box-shadow: none !important;     
+    transform: none !important;      
+  }
+}
 .all-home .left .btn:hover {
   background-color: var(--primary-op);
 }
@@ -30,8 +57,6 @@
   font-size: 1.2rem;
 }
 
-.all-home .right {
-}
 .all-home .right p {
   border: 1px solid var(--primary);
   color: var(--gray);
@@ -55,7 +80,6 @@
   --dots-bg-size: 26px;
   --dot-color: var(--gray);
   --dots-size: 3px;
-  
 }
 
 .dots-grid:after {
@@ -94,9 +118,6 @@
 }
 
 .funy-quote {
-}
-
-.funy-quote {
   color: var(--white);
   border: 1px solid var(--gray);
   padding: 1.2rem;
@@ -104,6 +125,7 @@
   max-width: 40.25rem;
   margin: auto;
   margin-bottom: 100px;
+  margin-top: 100px;
 }
 
 .funy-quote .quteo-text {

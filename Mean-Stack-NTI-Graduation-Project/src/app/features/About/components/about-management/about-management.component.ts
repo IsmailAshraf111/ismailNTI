@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AboutService } from '../../services/about.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-about-management',
     templateUrl: './about-management.component.html',
     styleUrls: ['./about-management.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [FormsModule, CommonModule]
 })
 export class AboutManagementComponent implements OnInit {
   about: any = {};

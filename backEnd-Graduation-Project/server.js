@@ -12,11 +12,19 @@ const contactMeRouter = require('./routes/contact-me-route')
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-app.use(
-  cors({
-    origin: "http://localhost:4200",
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:4200",
+//   })
+// );
+// app.use(cors());
+
+app.use(cors({
+  origin: "*", 
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true
+}));
+
 
 app.use(express.json());
 
@@ -26,7 +34,7 @@ app.use('/uploads', express.static('uploads'));
 
 
 // use Projects
-app.use("/projects", projectsRoutes);
+// app.use("/projects", projectsRoutes);
 
 // use adminLogin
 
@@ -40,9 +48,11 @@ app.use("/about", aboutRouter);
 
 app.use('/contact', contactMeRouter)
 
-// use projects
+// // use projects
 
-app.use('./projects', projectsRoutes)
+app.use('/projects', projectsRoutes)
+app.use('/uploads', express.static('uploads')); 
 
 
-app.listen(port, () => console.log(`Server started at port ${port}`));
+
+app.listen(port, "0.0.0.0" , () => console.log(`Server started at port ${port}`));

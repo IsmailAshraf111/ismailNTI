@@ -4,7 +4,8 @@ import { ContactMeService } from '../../services/contact-me.service';
     selector: 'app-contact-me',
     templateUrl: './contact-me.component.html',
     styleUrls: ['./contact-me.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [],
 })
 export class ContactMeComponent implements OnInit {
   contact: any = {};

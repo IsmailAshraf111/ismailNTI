@@ -15,20 +15,20 @@ const projectSchema = new mongoose.Schema({
   },
   btnOneTitle: {
     type: String,
-    required: true,
+    default: "",
   },
   btnTwoTitle: {
     type: String,
-    required: true,
+    default: "",
   },
 
   btnOneURL: {
     type: String,
-    required: true,
+    default: "",
   },
   btnTwoURL: {
     type: String,
-    required: true,
+    default: "",
   },
 
   imgUrl: {

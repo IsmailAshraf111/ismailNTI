@@ -1,14 +1,25 @@
+<div *ngIf="isLoading" [class.loading-spinner]="isLoading">
+  <app-loading-spinner
+    *ngIf="isLoading"
+    [class.loading-spinner]="isLoading"
+    [strokeWidth]="10"
+    [width]="'60px'"
+    [height]="'60px'"
+  ></app-loading-spinner>
+</div>
 <div class="all" *ngIf="homeData">
   <div class="container">
     <div class="all-home row d-flex align-items-center">
       <div class="left col-12 col-md-6 text-center text-md-start">
         <h1 class="fw-bold">
-          {{ homeData.title }}
-          <span>{{ homeData.subtitle || "" }}</span>
+          {{ homeData.name }}
+
+          <span class="descriptionName">{{ homeData.descriptionName }}</span>
+          <!-- <span>{{ homeData.subtitle || "" }}</span> -->
         </h1>
         <p>{{ homeData.description }}</p>
-        <button type="button" class="btn btn-info">
-          {{ homeData.button }}
+        <button routerLink="/contact-me" type="button" class="btn btn-info">
+          Contact Me
         </button>
       </div>
       <div class="right col-12 col-md-6 text-center">
@@ -31,15 +42,24 @@
     <div class="funy-quote">
       <div>
         <p class="quteo-text">
-          {{ homeData.quote || "With great power comes great responsibility" }}
+          {{ "With great power comes great responsibility" }}
         </p>
       </div>
       <div>
-        <p class="quteo-author">{{ homeData.quoteAuthor || "- dr who" }}</p>
+        <p class="quteo-author">{{ "- dr who" }}</p>
       </div>
     </div>
   </div>
+  <div class="mb-5">
+    <p-button
+      icon="pi pi-pencil"
+      label="Update Home"
+      routerLink="/homeManagement"
+      class="btnHome d-flex justify-content-center"
+    ></p-button>
+  </div>
 </div>
+
 <app-projects></app-projects>
 <app-about></app-about>
 <app-contact-me></app-contact-me>

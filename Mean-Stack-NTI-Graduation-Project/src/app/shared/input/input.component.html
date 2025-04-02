@@ -1,0 +1,24 @@
+<div>
+  <p-floatlabel variant="on">
+    <input
+      [type]="type"
+      [id]="name"
+      [name]="name"
+      [formControl]="formControl"
+      [class]="className"
+      [placeholder]="hasValue() ? '' : placeholder"
+      [required]="required"
+    />
+    <label [for]="name" [class.float-label-above]="hasValue()">{{
+      label
+    }}</label>
+  </p-floatlabel>
+
+  @if (hasError) {
+  <div class="error-container">
+    @for (message of errMessage; track $index) {
+    <span [class]="errorClass">{{ message }}</span>
+    }
+  </div>
+  }
+</div>

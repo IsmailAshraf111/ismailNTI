@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const { validationResult } = require('express-validator');
-const projectsModels = require('../models/home-model');
+const projectsModels = require('../models/prjects-model');
 
 // Multer setup
 const storage = multer.diskStorage({
@@ -15,7 +15,9 @@ const upload = multer({ storage });
 // Create
 exports.createProject = [upload.single('imgUrl'), async (req, res) => {
   const { tech, title, description, btnOneTitle, btnOneUrl, btnTwoTitle, btnTwoUrl } = req.body;
-  const imgUrl = req.file ? `/uploads/${req.file.filename}` : '';
+  // const imgUrl = req.file ? `/uploads/${req.file.filename}` : '';
+  let imgUrl = req.file ? `/uploads/${req.file.filename}` : req.body.imgUrl;
+
   
   try {
     const newProject = new projectsModels({ tech, title, description, btnOneTitle, btnOneUrl, btnTwoTitle, btnTwoUrl, imgUrl });
@@ -40,7 +42,7 @@ exports.getProjects = async (req, res) => {
 exports.updateProject = [upload.single('imgUrl'), async (req, res) => {
   const { id } = req.params;
   const { tech, title, description, btnOneTitle, btnOneUrl, btnTwoTitle, btnTwoUrl } = req.body;
-  const imgUrl = req.file ? `/uploads/${req.file.filename}` : req.body.imgUrl;
+  let imgUrl = req.file ? `/uploads/${req.file.filename}` : req.body.imgUrl;
 
   try {
     const updatedProject = await projectsModels.findByIdAndUpdate(id, { tech, title, description, btnOneTitle, btnOneUrl, btnTwoTitle, btnTwoUrl, imgUrl }, { new: true });

@@ -18,18 +18,20 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'abuotMe', component: AboutComponent },
   { path: 'contact-me', component: ContactMeComponent },
+  { path: 'homeManagement', component: HomeManagementComponent },
+  { path: 'projects-meManagement', component: ProjectsManagementComponent },
+  { path: 'about-meManagement', component: AboutManagementComponent },
+  {
+    path: 'contact-me-management',
+    component: ContactMeManagementComponent,
+  },
+
   {
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: 'about-meManagement', component: AboutManagementComponent },
-      { path: 'projects-meManagement', component: ProjectsManagementComponent },
-      { path: 'homeManagement', component: HomeManagementComponent },
-      {
-        path: 'contact-me-management',
-        component: ContactMeManagementComponent,
-      },
+   
     ],
   },
 

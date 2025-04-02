@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactMeService } from '../../services/contact-me.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-contact-me-management',
     templateUrl: './contact-me-management.component.html',
     styleUrls: ['./contact-me-management.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [FormsModule, CommonModule],
 })
 export class ContactMeManagementComponent implements OnInit {
   contact: any = {};

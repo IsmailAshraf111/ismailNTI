@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthAdminService } from '../../../features/Auth/services/auth-admin.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css',
-    standalone: false
+    standalone: true,
+    imports: [ FormsModule, RouterLink, CommonModule, RouterLinkActive ],
 })
 export class NavbarComponent {
   constructor(private authService: AuthAdminService, private router: Router) {}

@@ -100,3 +100,40 @@
   font-size: 1rem;
   color: var(--gray);
 }
+
+
+::ng-deep .p-button {
+  background: none !important;
+  border: 1px solid var(--primary) !important;
+  color: var(--white) !important;
+  border-radius: 0 !important;
+  margin: auto !important;
+  
+
+  &:hover {
+    background: none !important;     
+    border-color: var(--primary) !important; 
+    color: var(--white) !important;   
+    box-shadow: none !important;     
+    transform: none !important;      
+  }
+  
+ 
+}
+::ng-deep .delete-btn .p-button-icon {
+  color: red !important;
+  border: none !important;
+}
+
+::ng-deep .delete-btn .p-button {
+  background: none !important;
+  border: none !important;
+  color: red !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+::ng-deep .edit-btn .p-button {
+  border: none !important;
+  
+}

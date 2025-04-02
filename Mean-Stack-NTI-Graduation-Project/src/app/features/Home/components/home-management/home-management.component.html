@@ -1,41 +1,59 @@
 <div class="container">
-  <form (ngSubmit)="onEdit()" enctype="multipart/form-data">
+  <form
+    [formGroup]="formData"
+    (ngSubmit)="onEdit()"
+    enctype="multipart/form-data"
+  >
     <div class="form-group">
-      <label for="title">Title:</label>
+      <app-input
+        [name]="'name'"
+        [type]="'text'"
+        [formGroup]="formData"
+        [controlName]="'name'"
+        [className]="'form-control'"
+        [label]="'name:'"
+        [required]="true"
+      >
+      </app-input>
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="descriptionName">descriptionName:</label>
       <input
         type="text"
-        id="title"
-        name="title"
-        [(ngModel)]="homeData.title"
+        id="descriptionName"
+        name="descriptionName"
+        formControlName="descriptionName"
         class="form-control"
-        placeholder="Edit Title"
+        placeholder="Edit descriptionName"
         required
       />
+    </div> -->
+
+    <div class="form-group">
+      <app-input
+        [name]="'descriptionName'"
+        [type]="'text'"
+        [formGroup]="formData"
+        [controlName]="'descriptionName'"
+        [className]="'form-control'"
+        [label]="'descriptionName:'"
+        [required]="true"
+      >
+      </app-input>
     </div>
 
     <div class="form-group">
-      <label for="description">Description:</label>
-      <textarea
-        id="description"
-        name="description"
-        [(ngModel)]="homeData.description"
-        class="form-control"
-        placeholder="Edit Description"
-        required
-      ></textarea>
-    </div>
-
-    <div class="form-group">
-      <label for="button">Button Text:</label>
-      <input
-        type="text"
-        id="button"
-        name="button"
-        [(ngModel)]="homeData.button"
-        class="form-control"
-        placeholder="Edit Button Text"
-        required
-      />
+      <p-floatlabel variant="on">
+        <textarea
+          id="description"
+          name="description"
+          formControlName="description"
+          class="form-control"
+          required
+        ></textarea>
+        <label for="description" [class.float-label-above]="hasValue()">Description:</label>
+      </p-floatlabel>
     </div>
 
     <div class="form-group">
@@ -47,16 +65,19 @@
         class="form-control"
       />
       <img
-        *ngIf="homeData.imgPreview"
-        [src]="homeData.imgPreview"
+        *ngIf="homeData?.imgPreview"
+        [src]="homeData?.imgPreview"
         alt="Preview Image"
         class="img-thumbnail mt-3"
       />
     </div>
 
-    <button type="submit" class="btn btn-primary mt-3">Update</button>
-    <button type="button" class="btn btn-secondary mt-3" (click)="onSubmit()">
-      submit
+    <button
+      type="submit"
+      class="btn btn-primary mt-3"
+      [disabled]="!formData.valid"
+    >
+      Update
     </button>
   </form>
 </div>

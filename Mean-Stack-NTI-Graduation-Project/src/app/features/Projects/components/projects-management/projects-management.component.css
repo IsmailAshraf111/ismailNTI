@@ -19,19 +19,17 @@
 
 }
 
-input{
-    margin-top: 20px;
-    width: 20rem;
-    padding: 1rem 1rem;
-    background-color: var(--primary-op);
-    border: none;
-    border: 1px solid var(--primary);
-
-
+.projects-management-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background);
+    height: 100vh;
+    width: 100vw;
 }
 
-form{
-  padding: 3rem;
+.form-container{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 40px 6px rgba(0, 0, 0, 0.1);
@@ -40,10 +38,13 @@ form{
     margin-top: 100px;
     margin-bottom: 200px;
     color: var(--primary);
-    text-align: center;
+    padding: 2rem 2rem;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
   
 }
-
+/* 
 input::placeholder{
     color: var(--primary);
 }
@@ -66,8 +67,8 @@ button:hover{
     background-color: var(--primary-op);
 
 
-}
-
+} 
+*/
 .editH h1{
         font-size: 3rem;
         font-weight: bold;
@@ -79,7 +80,7 @@ button:hover{
   
     
 
-}
+} 
 
 
 @keyframes moveBackground {

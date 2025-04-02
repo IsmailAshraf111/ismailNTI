@@ -28,3 +28,20 @@ exports.updateMetaData = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+// exports.createMetaData = async (req, res) => {
+//   try {
+//     // const newHome = new Home(req.body);
+//     const newHomeData = req.body;
+
+//     if (req.file) {
+//       newHomeData.img = `uploads/${req.file.filename}`;
+//     }
+//     const newHome = new Home(newHomeData);
+//     const savedHome = await newHome.save();
+//     res.status(201).json(savedHome);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// }
+

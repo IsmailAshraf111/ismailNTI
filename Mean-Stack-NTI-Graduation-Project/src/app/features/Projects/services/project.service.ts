@@ -1,28 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environment/environment';
+import { IProjects } from '../models/iprojects';
+import { IGetProjects } from '../models/iget-projects';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
-  private apiUrl = 'http://localhost:3000/projects'; 
+    private apiUrl = `${environment.apiUrl}projects`;
+  
 
   constructor(private http: HttpClient) { }
 
-  createProject(project: FormData): Observable<any> {
-    return this.http.post(`${this.apiUrl}/`, project);
+  createProject(project: FormData): Observable<IProjects> {
+    return this.http.post<IProjects>(`${this.apiUrl}`, project);
   }
 
-  updateProject(id: string, project: FormData): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, project);
+  updateProject(id: number, data: FormData): Observable<IProjects> {
+    return this.http.put<IProjects>(`${this.apiUrl}/${id}`, data);
   }
 
-  deleteProject(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  deleteProject(id: number): Observable<IGetProjects> {
+    return this.http.delete<IGetProjects>(`${this.apiUrl}/${id}`);
   }
 
-  getProjects(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getProjects(): Observable<IGetProjects[]> {
+    return this.http.get<IGetProjects[]>(this.apiUrl);
   }
 }
