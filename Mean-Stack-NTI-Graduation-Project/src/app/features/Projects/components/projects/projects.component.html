@@ -1,42 +1,41 @@
-
-<div class="container mt-5 mb-5">
-
+<div class="container mt-5 mb-5 all">
   <div class="titel-projects mt-2">
-    <h1 class="fw-bold"><span>/</span>projects</h1>
-    <p>All of my projects</p>
+    <h1 class="fw-bold">
+      <span>#</span>{{ "app.projects.projects" | translate }}
+    </h1>
   </div>
+  <div class="projects row mb-4">
+    <div class="mb-5 d-flex justify-content-center">
+      <p-button
+        icon="pi pi-folder-plus"
+        [label]="'app.projects.add-project-btn' | translate"
 
-  <div class="decent">
-    <h1><span>#</span>decent</h1>
-  </div>
-
-  <div class="projects row mt-5">
-
-    <p-button
-      icon="pi pi-folder-plus"
-      label="Add Project"
-      routerLink="/projects-meManagement"
-      class="d-flex justify-content-center mb-4"
-    ></p-button>
+        routerLink="/projects-meManagement"
+        class="add-btn"
+      ></p-button>
+    </div>
     <div
-      class="cards col-sm-6 col-md-4 col-lg-3 mb-4"
+      class="cards col-12 col-md-6 col-lg-4 mb-4"
       *ngFor="let project of projects"
     >
-      <div class="card" style="width: 18rem">
+      <div class="card">
         <div class="d-flex justify-content-between align-items-center">
           <p-button
             icon="pi pi-trash"
             (click)="deleteProject(project._id)"
             class="delete-btn"
-            pTooltip="Delete Project"
+            [pTooltip]="'app.projects.delete-project-btn' | translate"
             tooltipPosition="top"
           >
           </p-button>
           <p-button
             icon="pi pi-pencil"
             class="edit-btn"
-            pTooltip="Edit Project"
+            [pTooltip]="'app.projects.update-project-btn' | translate"
             tooltipPosition="top"
+            (click)="getProjectById(project._id)"
+            routerLink="/projects-meManagement"
+            [queryParams]="{ id: project._id }"
           ></p-button>
         </div>
         <img [src]="'http://localhost:3000' + project.imgUrl" />
@@ -58,7 +57,18 @@
         </div>
       </div>
     </div>
-    <app-loading-spinner *ngIf="isLoading" [strokeWidth]="10" [width]="'60px'" [height]="'60px'"></app-loading-spinner>
+    <app-loading-spinner
+      *ngIf="isLoading"
+      [strokeWidth]="10"
+      [width]="'60px'"
+      [height]="'60px'"
+    ></app-loading-spinner>
 
+    <div *ngIf="projects.length === 0 && !isLoading">
+      <div class="not-found d-flex justify-content-center align-items-center">
+        <h2 class="fw-bold">{{ "app.projects.projects-not-found" | translate }}</h2>
+      </div>
+
+    </div>
   </div>
 </div>

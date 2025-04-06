@@ -1,0 +1,38 @@
+.line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 0;
+  margin-left: 17px;
+  z-index: 2000;
+  position: fixed;
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-icons a i{
+    color: var(--gray);
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: var(--white);
+    }
+  }
+  .social-icons a:hover {
+    color: var(--white);
+    transform: scale(1.2);
+  }
+
+  @media (max-width: 768px) {
+  display: none;
+  }
+ 
+  @media (max-width: 992px) {
+    display: none;
+  }
+}

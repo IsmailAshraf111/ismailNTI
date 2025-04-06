@@ -3,14 +3,16 @@ import { ProjectService } from '../../services/project.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { IProjects } from '../../models/iprojects';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { IGetProjects } from '../../models/iget-projects';
 import { TooltipModule } from 'primeng/tooltip';
-import { damp } from 'three/src/math/MathUtils.js';
 import { LoadingSpinnerComponent } from '../../../../shared/loading-spinner/loading-spinner.component';
+import { RouterModule } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-projects',
@@ -25,15 +27,19 @@ import { LoadingSpinnerComponent } from '../../../../shared/loading-spinner/load
     InputTextModule,
     ButtonModule,
     TooltipModule,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    RouterModule,
+    TranslatePipe,
+    ConfirmDialogModule,
+    ToastModule,
   ],
 })
 export class ProjectsComponent implements OnInit {
   projects: IGetProjects[] = [];
   isLoading: boolean = true;
 
-
   constructor(private projectService: ProjectService) {}
+  
 
   ngOnInit(): void {
     this.getProjects();
@@ -54,6 +60,17 @@ export class ProjectsComponent implements OnInit {
       },
       complete: () => {
         console.log('Data fetching complete');
+      },
+    });
+  }
+
+  getProjectById(_id: number): void {
+    this.projectService.getProjectById(_id).subscribe({
+      next: (res) => {
+        console.log('ProjectById fetched successfully:', res);
+      },
+      error: (error) => {
+        console.error('Error fetching project:', error);
       },
     });
   }

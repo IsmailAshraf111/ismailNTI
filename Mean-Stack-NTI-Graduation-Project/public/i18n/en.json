@@ -1,0 +1,84 @@
+{
+  "app": {
+    "nav": {
+      "home": "home",
+      "projects": "projects",
+      "about": "about-me",
+      "services": "services",
+      "contact": "contact-me",
+      "login": "login",
+      "register": "register"
+    },
+    "home": {
+      "contact": "Contact me =>",
+      "update-home-btn": "Update home",
+      "home-management": {
+        "edit-home-page": "Edit Home Page",
+        "description": "Description",
+        "name": "Name",
+        "descriptionName": "Description Name",
+        "img": "Image",
+        "update-btn": "Update",
+        "create-btn": "Create"
+      }
+    },
+    "projects": {
+      "projects": "Projects",
+      "all-of-my-projects": "All of my projects",
+      "update-project-btn": "Update project",
+      "add-project-btn": "Add project",
+      "delete-project-btn": "Delete project",
+      "projects-not-found": "Projects not found",
+      "projects-management": {
+        "create-project": "Create project",
+        "tecnologies": "tecnologies",
+        "title": "Title",
+        "description": "Description",
+        "url-one": "url one",
+        "url-two": "url two",
+        "img": "Image",
+        "create-btn": "Create"
+      }
+    },
+    "about": {
+      "about-me": "about-me",
+      "who-am-i": "who i am",
+      "skills": "skills",
+      "programmingLanguages": "languages",
+      "data-bases": "databases",
+      "other": "other",
+      "tools": "tools",
+      "freameworks": "frameworks",
+      "update-about-btn": "Update about"
+    },
+    "contact": {
+      "update-contact-btn": "Update contact"
+    },
+
+    "validation": {
+      "required": "This field is required",
+      "email": "Invalid email address",
+      "invalidEmail": "Invalid email format",
+      "minLength": "The value is too short",
+      "maxLength": "The value is too long",
+      "pattern": "Invalid format",
+      "min": "The value is too small",
+      "max": "The value is too large",
+      "minDate": "Date is too early",
+      "maxDate": "Date is too late",
+      "invalidDate": "Invalid date",
+      "invalidTime": "Invalid time",
+      "invalidDateFormat": "Invalid date format",
+      "invalidTimeFormat": "Invalid time format",
+      "invalidDateRange": "Invalid date range",
+      "invalidTimeRange": "Invalid time range",
+      "invalidDateTime": "Invalid date and time",
+      "invalidDateTimeFormat": "Invalid date and time format",
+      "invalidDateTimeRange": "Invalid date and time range",
+      "invalidDateTimeRangeFormat": "Invalid date and time range format",
+      "missingUpperCase": "Password must contain at least one uppercase letter",
+      "missingNumber": "Password must contain at least one number",
+      "missingSpecialChar": "Password must contain at least one special character"
+    }
+  }
+}

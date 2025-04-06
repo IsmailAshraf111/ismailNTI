@@ -1,59 +1,64 @@
 :root {
-    --primary: #b152da;
-    --primary-op: #b152da1a;
-    --gray: #96a2b9;
-    --gray-op: #96a2b91a;
-    --background: #262b33;
-    --white: #ffffff;
-  }
-  
-  
-.path{
-    color: var(--white);
-    margin-top: 100px;
+  --primary: #b152da;
+  --primary-op: #b152da1a;
+  --gray: #96a2b9;
+  --gray-op: #96a2b91a;
+  --background: #262b33;
+  --white: #ffffff;
 }
 
-.path span{
+.path {
+  color: var(--white);
+  margin-top: 100px;
+
+  span {
     color: var(--primary);
-}
+  }
 
-.path p{
+  p {
     color: var(--gray);
-
+  }
 }
 
-.about{
-    margin-top: 50px;
+.svgAll {
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
+.about {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 
-.about img{
+  img {
     max-width: 60%;
     border-bottom: 1px solid var(--primary);
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center !important;
+  }
 }
 
-.content{
-    color: var(--gray);
-    margin-top: 100px;
-
+.content {
+  color: var(--gray);
+  margin-top: 100px;
 }
-
-.skil{
-
+.all-skills {
+  margin-left: 50px;
 }
-.skil h1 span{
-    color: var(--primary);
-}
-
 
 .skil {
-    color: var(--white);
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-    margin-top: 50px;
+  color: var(--white);
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin-top: 50px;
+  span {
+    color: var(--primary);
   }
-  
-  .skil::after {
+
+  ::after {
     content: "";
     position: absolute;
     bottom: 30px;
@@ -62,82 +67,47 @@
     height: 2px;
     background-color: var(--primary);
   }
+}
 
-  .skills-content{
-    color: var(--white);
-    border: 1px solid var(--gray);
-    margin-top: 20px;
-    margin-left: 20px;
+.skills-content {
+  color: var(--white);
+  border: 1px solid var(--gray);
+  margin-top: 20px;
+  margin-left: 20px;
+  overflow: hidden;
+
+  li {
+    color: var(--gray);
   }
-  .skills-content .name{
-    border-bottom: 1px solid var(--white);
+  .name {
+    border-bottom: 1px solid var(--gray);
+    width: 100%;
     font-weight: bold;
     font-size: 1.2rem;
-
   }
-
-  .skills-content .skills-list{
-
-  }
-
-  .skills-content .skills-list .skils-name {
+  .skills-list .skils-name {
     color: var(--gray);
     font-size: 1.2rem;
+  }
+}
 
-  }
+li {
+  list-style: none;
+}
 
-  li{
-    text-: none;
+::ng-deep .p-button {
+  background: none !important;
+  border: 1px solid var(--primary) !important;
+  color: var(--white) !important;
+  border-radius: 0 !important;
+  margin: auto !important;
 
+  &:hover {
+    background: none !important;
+    border-color: var(--primary-op) !important;
+    color: var(--white) !important;
   }
-
-  .square {
-    width: 200px;
-    height: 200px;
-    border: 2px solid var(--primary);
-    position: absolute;
-    z-index: -200;
-    overflow: hidden;
-    
-  }
-  
-  .square1 {
-    top: 10px;
-    left: 10px;
-  }
-  
-  .square2 {
-    top: 40px;
-    left: 40px;
-  }
-
-  .dots-grid {
-    position: relative;
-    margin: 50px auto;
-    display: block;
-    inline-size: 250px;
-    --dots-bg-size: 26px;
-    --dot-color: var(--gray);
-    --dots-size: 3px;
-    z-index: 100;
-    right: 300px;
-
-  }
-  
-  .dots-grid:after {
-    content: "";
-    display: block;
-    inline-size: 150px;
-    block-size: 150px;
-    position: absolute;
-    inset-block-start: 10%;
-    inset-inline-end: -100px;
-  
-    background-image: radial-gradient(
-      var(--dot-color) var(--dots-size),
-      transparent 0
-    );
-    background-size: var(--dots-bg-size) var(--dots-bg-size);
-    background-position: center;
-  }
-    
+}
+::ng-deep .p-button-label {
+  font-size: 1rem !important;
+}

@@ -8,4 +8,5 @@ export interface IGetProjects {
     btnOneURL: string,
     btnTwoURL: string,
     imgUrl: string,
+    imgPreview?: string
 }

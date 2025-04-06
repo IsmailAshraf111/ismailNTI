@@ -19,6 +19,8 @@ export const routes: Routes = [
   { path: 'contact-me', component: ContactMeComponent },
   { path: 'homeManagement', component: HomeManagementComponent },
   { path: 'projects-meManagement', component: ProjectsManagementComponent },
+  { path: 'projects-meManagement/:id', component: ProjectsManagementComponent },
+
   { path: 'about-meManagement', component: AboutManagementComponent },
   {
     path: 'contact-me-management',

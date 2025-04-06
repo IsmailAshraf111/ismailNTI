@@ -1,20 +1,27 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environment/environment';
+import { IAbout } from '../models/iabout';
+import { IGetAbout } from '../models/iget-about';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AboutService {
-  private apiUrl = 'http://localhost:3000/about';
+private apiUrl =` ${environment.apiUrl}about`
 
-  constructor(private http: HttpClient) {}
+private http = inject(HttpClient)
 
-  getAbout(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getAbout(): Observable<IGetAbout> {
+    return this.http.get<IGetAbout>(this.apiUrl);
   }
 
-  updateAbout(id: string, data: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, data);
+  updateAbout(id: string, data: IAbout): Observable<IAbout[]> {
+    return this.http.put<IAbout[]>(`${this.apiUrl}/${id}`, data);
+  }
+
+  createAbout(data: IAbout): Observable<IAbout[]> {
+    return this.http.post<IAbout[]>(this.apiUrl, data);
   }
 }

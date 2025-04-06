@@ -21,7 +21,7 @@ export class HomeService {
     return this.http.put<any>(`${this.apiUrl}/${id}`, homeData);
   }
 
-  // createHomeData(homeData: FormData): Observable<any> {
-  //   return this.http.post<any>(`${this.apiUrl}/create`, homeData);
-  // }
+  createHomeData(homeData: FormData): Observable<IHome> {
+    return this.http.post<IHome>(`${this.apiUrl}/`, homeData);
+  }
 }

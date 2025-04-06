@@ -6,75 +6,71 @@
   --background: #262b33;
   --white: #ffffff;
 }
-.projects .cards {
-  margin-left: 50px;
+.all{
+  margin-top: 100px !important;
+}
+.not-found{
+  color: var(--gray);
+}
+.projects {
+  .cards {
+    .card {
+      border: 1px solid var(--gray);
+      border-radius: 0;
+      background-color: var(--background);
+      color: var(--white);
+    }
+
+    .card .tec {
+      border: 1px solid var(--gray);
+      color: var(--gray);
+      border-left: none;
+      border-right: none;
+
+      .tec span {
+        margin-left: 10px;
+      }
+    }
+  }
 }
 
 .titel-projects {
   color: var(--white);
   margin-bottom: 100px;
-}
-
-.titel-projects p {
-  color: var(--gray);
-  font-size: 1.2rem;
-}
-
-.titel-projects span {
-  color: var(--primary);
-}
-
-.decent {
   color: var(--white);
   font-weight: bold;
   position: relative;
   display: inline-block;
-}
 
-.decent::after {
-  content: "";
-  position: absolute;
-  bottom: 30px;
-  left: 100%;
-  width: 80px;
-  height: 2px;
-  background-color: var(--primary);
-}
+  p {
+    color: var(--gray);
+    font-size: 1.2rem;
+  }
 
-.decent h1 {
-  font-weight: bold;
-}
+  span {
+    color: var(--primary);
+  }
 
-.decent span {
-  color: var(--primary);
+  ::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 100%;
+    width: 80%;
+    height: 2px;
+    background-color: var(--primary);
+  }
 }
-
 .btn {
   background: none;
   border: 1px solid var(--primary);
   color: var(--white);
   border-radius: 0;
   padding: 0.6rem 1.2rem;
-}
 
-.btn:hover {
-  background-color: var(--primary-op);
-}
-
-.projects .cards .card {
-  border: 1px solid var(--gray);
-  border-radius: none !important;
-  background-color: var(--background);
-  color: var(--white);
-}
-
-.projects .cards .card .tec {
-  border: 1px solid var(--gray);
-  color: var(--gray);
-}
-
-.projects .cards .card .tec span {
-  margin-left: 10px;
+  &:hover {
+    background-color: var(--primary-op);
+  }
 }
 
 .card-text {
@@ -101,24 +97,20 @@
   color: var(--gray);
 }
 
-
 ::ng-deep .p-button {
   background: none !important;
   border: 1px solid var(--primary) !important;
   color: var(--white) !important;
   border-radius: 0 !important;
   margin: auto !important;
-  
 
   &:hover {
-    background: none !important;     
-    border-color: var(--primary) !important; 
-    color: var(--white) !important;   
-    box-shadow: none !important;     
-    transform: none !important;      
+    background: none !important;
+    border-color: var(--primary) !important;
+    color: var(--white) !important;
+    box-shadow: none !important;
+    transform: none !important;
   }
-  
- 
 }
 ::ng-deep .delete-btn .p-button-icon {
   color: red !important;
@@ -135,5 +127,8 @@
 
 ::ng-deep .edit-btn .p-button {
   border: none !important;
-  
+}
+
+::ng-deep .add-btn .p-button-label {
+  font-size: 1rem !important;
 }

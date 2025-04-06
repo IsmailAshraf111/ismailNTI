@@ -1,31 +1,88 @@
 <div class="container">
-    <div class="editH">
-      <h1 class="text-center">Edit About Page</h1>
-    </div>
-    <form (ngSubmit)="updateAbout()">
-      <div>
-        <textarea
-          [(ngModel)]="about.description"
-          name="description"
-          placeholder="Edit About Description"
-        ></textarea>
-      </div>
-      <div>
-        <input type="text" [(ngModel)]="about.languages" name="languages" placeholder="Edit Languages" />
-      </div>
-      <div>
-        <input type="text" [(ngModel)]="about.databases" name="databases" placeholder="Edit Databases" />
-      </div>
-      <div>
-        <input type="text" [(ngModel)]="about.tools" name="tools" placeholder="Edit Tools" />
-      </div>
-      <div>
-        <input type="text" [(ngModel)]="about.otherSkills" name="Other" placeholder="Edit Other" />
-      </div>
-      <div>
-        <input type="text" [(ngModel)]="about.frameworks" name="Frameworks" placeholder="Edit Frameworks" />
-      </div>
-      <button type="submit">Update</button>
-    </form>
+ 
+  <form
+    [formGroup]="aboutForm"
+    (ngSubmit)="onSubmit()"
+    enctype="multipart/form-data"
+  >
+  <div class="editH">
+    <h1 class="text-center">Edit About Page</h1>
   </div>
-  
+    <div class="form-group">
+      <textarea
+        formControlName="description"
+        name="description"
+        placeholder="Edit About Description"
+        rows="5"
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <app-input
+        [label]="'languages'"
+        [placeholder]="'e.g. JavaScript, TypeScript, Python'"
+        [formGroup]="aboutForm"
+        [controlName]="'languages'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+
+    <div class="form-group">
+      <app-input
+        [label]="'databases'"
+        [placeholder]="'e.g. MongoDB, MySQL, PostgreSQL'"
+        [formGroup]="aboutForm"
+        [controlName]="'databases'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+
+    <div class="form-group">
+      <app-input
+        [label]="'tools'"
+        [placeholder]="'e.g. Git, Docker, VS Code'"
+        [formGroup]="aboutForm"
+        [controlName]="'tools'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+
+    <div class="form-group">
+      <app-input
+        [label]="'other Skills'"
+        [placeholder]="'e.g. Agile, Scrum, UX Design'"
+        [formGroup]="aboutForm"
+        [controlName]="'otherSkills'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+
+    <div class="form-group">
+      <app-input
+        [label]="'frameworks'"
+        [placeholder]="'e.g. Angular, React, Express'"
+        [formGroup]="aboutForm"
+        [controlName]="'frameworks'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+
+    <button type="submit" [disabled]="!aboutForm.valid">create</button>
+    <!-- <button  (click)="onUpdate()" type="submit" [disabled]="!aboutForm.valid">update</button> -->
+    <!-- <div *ngIf="about of aboutData">
+      <p-button
+    
+      type="submit"
+      [disabled]="!aboutForm.valid"
+      (click)="onUpdate(aboutData._id)"
+      label="update"
+    ></p-button>
+     </div> -->
+  </form>
+</div>

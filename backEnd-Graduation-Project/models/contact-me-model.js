@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 
 const contactSchema = new mongoose.Schema({
+  headerContact: { type: String, required: true },
   description: { type: String, required: true },
   titleBox: { type: String, required: true },
-  iconOne: { type: String, required: true },
+  descriptionBox: { type: String, required: true },
+  linkIconOne: { type: String, required: true },
   descIconOne: { type: String, required: true },
-  iconTwo: { type: String, required: true },
+  iconeOne: { type: String, required: true },
+  linkIconTwo: { type: String, required: true },
   descIconTwo: { type: String, required: true },
+  iconeTwo: { type: String, required: true },
 });
 
 const Contact = mongoose.model("Contact", contactSchema);

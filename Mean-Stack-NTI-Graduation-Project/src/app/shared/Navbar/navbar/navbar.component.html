@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg">
-  <div class="container d-flex justify-content-between align-items-center">
+<nav class="navbar navbar-expand-lg ">
+  <div class="container d-flex justify-content-between align-items-center ">
     <a class="navbar-brand logo fw-bold" href="#">Ismail</a>
+    
     <button
       class="navbar-toggler"
       type="button"
@@ -10,7 +11,11 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      <span ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect y="5" width="24" height="2" fill="#D9D9D9"/>
+        <rect x="9" y="12" width="15" height="2" fill="#D9D9D9"/>
+        </svg>
+        </span>
     </button>
     <div class="collapse navbar-collapse pages" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -20,41 +25,50 @@
             aria-current="page"
             routerLink="/home"
             routerLinkActive="active"
-            ><span>#</span>home</a
+            ><span>#</span>{{ "app.nav.home" | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/projects" routerLinkActive="active"
-            ><span>#</span>projects</a
+            ><span>#</span>{{ "app.nav.projects" | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/abuotMe" routerLinkActive="active"
-            ><span>#</span>about-me</a
+            ><span>#</span>{{ "app.nav.about" | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/contact-me" routerLinkActive="active"
-            ><span>#</span>contact-me</a
+            ><span>#</span>{{ "app.nav.contact" | translate }}</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link logout" 
-          *ngIf="isLoggedIn()"  (click)="logout()">logout</a
+          <a class="nav-link logout" *ngIf="isLoggedIn()" (click)="logout()">{{
+            "app.nav.logout" | translate
+          }}</a>
+        </li>
+        <li class="nav-item login">
+          <a
+            class="nav-link"
+            *ngIf="!isLoggedIn()"
+            routerLink="/adminLogin"
+            routerLinkActive="active"
+            ><span>#</span>{{ "app.nav.login" | translate }}</a
           >
         </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf="!isLoggedIn()" routerLink="/adminLogin" routerLinkActive="active"
-            ><span>#</span>login</a
-          >
-        </li>
-      
-    
+        <li class="nav-item"></li>
       </ul>
-      <!-- <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>  -->
+      <p-button
+        (click)="switchLanguage()"
+        [label]="localStorage.getItem('lang') === 'en' ? 'AR' : 'EN'"
+        [icon]="
+          localStorage.getItem('lang') === 'en' ? 'pi pi-globe' : 'pi pi-globe'
+        "
+        [class]="'lang-btn'"
+        [iconPos]="'left'"
+        [ariaLabel]="'Switch Language'"
+      ></p-button>
     </div>
   </div>
 </nav>

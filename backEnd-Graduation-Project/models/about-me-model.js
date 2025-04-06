@@ -2,12 +2,11 @@ const mongoose = require("mongoose");
 
 const aboutSchema = new mongoose.Schema({
   description: { type: String },
-  img: { type: String, required: false },
-  languages: { type: [String], required: true },
-  databases: { type: [String], required: true },
-  otherSkills: { type: [String], required: false },
-  tools: { type: [String], required: false },
-  frameworks: { type: [String], required: false },
+  languages: { type: String, required: true },
+  databases: { type: String, required: true },
+  otherSkills: { type: String, required: false },
+  tools: { type: String, required: false },
+  frameworks: { type: String, required: false },
 });
 
 

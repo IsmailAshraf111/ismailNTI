@@ -1,9 +1,14 @@
+
 <div class="container">
+ 
   <form
     [formGroup]="formData"
     (ngSubmit)="onEdit()"
     enctype="multipart/form-data"
   >
+  <div class="editH">
+    <h1 class="text-center">{{'app.home.home-management.edit-home-page' | translate}}</h1>
+  </div>
     <div class="form-group">
       <app-input
         [name]="'name'"
@@ -11,24 +16,11 @@
         [formGroup]="formData"
         [controlName]="'name'"
         [className]="'form-control'"
-        [label]="'name:'"
+        [label]="'app.home.home-management.name' | translate"
         [required]="true"
       >
       </app-input>
     </div>
-
-    <!-- <div class="form-group">
-      <label for="descriptionName">descriptionName:</label>
-      <input
-        type="text"
-        id="descriptionName"
-        name="descriptionName"
-        formControlName="descriptionName"
-        class="form-control"
-        placeholder="Edit descriptionName"
-        required
-      />
-    </div> -->
 
     <div class="form-group">
       <app-input
@@ -37,7 +29,7 @@
         [formGroup]="formData"
         [controlName]="'descriptionName'"
         [className]="'form-control'"
-        [label]="'descriptionName:'"
+        [label]="'app.home.home-management.descriptionName' | translate"
         [required]="true"
       >
       </app-input>
@@ -52,12 +44,12 @@
           class="form-control"
           required
         ></textarea>
-        <label for="description" [class.float-label-above]="hasValue()">Description:</label>
+        <label for="description" [class.float-label-above]="hasValue()">{{'app.home.home-management.description' | translate}}</label>
       </p-floatlabel>
     </div>
 
     <div class="form-group">
-      <label for="img">Image:</label>
+      <label for="img">{{'app.home.home-management.img' | translate}}</label>
       <input
         type="file"
         id="img"
@@ -77,7 +69,7 @@
       class="btn btn-primary mt-3"
       [disabled]="!formData.valid"
     >
-      Update
+      {{ formData.value._id ? ('app.home.home-management.update-btn' | translate) : 'app.home.home-management.create-btn' | translate }}
     </button>
   </form>
 </div>

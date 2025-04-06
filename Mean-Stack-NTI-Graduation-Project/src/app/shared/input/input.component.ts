@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
+import { LocalizationService } from '../../core/services/localization.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 @Component({
@@ -15,6 +17,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ReactiveFormsModule,
     FloatLabelModule,
     InputTextModule,
+    TranslatePipe,
+    
   
   ],
 })
@@ -39,6 +43,7 @@ export class InputComponent {
 
   focused: boolean = false;
 
+  private localization = inject(LocalizationService);
   get formControl(): FormControl {
     return this.formGroup.get(this.controlName) as FormControl;
   }
@@ -50,7 +55,7 @@ export class InputComponent {
     if (!this.hasError) return [];
     const errors = this.formControl.errors;
     const messages: string[] = [];
-    if (errors?.['required']) messages.push('app.validation.required');
+    if (errors?.['required']) messages.push('app.validation.required' );
     if (errors?.['invalidEmail']) messages.push('app.validation.invalidEmail');
     if (errors?.['minlength']) messages.push('app.validation.minLength');
     if (errors?.['maxlength']) messages.push('app.validation.maxLength');

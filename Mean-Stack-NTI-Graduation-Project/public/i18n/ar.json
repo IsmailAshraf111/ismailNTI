@@ -1,0 +1,86 @@
+{
+  "app": {
+    "nav": {
+      "home": "الرئيسية",
+      "projects": "المشاريع",
+      "about": "من انا",
+      "services": "الخدمات",
+      "contact": "تواصل معي",
+      "login": "تسجيل الدخول",
+      "register": "إنشاء حساب"
+    },
+    "home": {
+      "contact": "تواصل معنا =>",
+      "update-home-btn": "تحديث الصفحة",
+      "home-management": {
+        "edit-home-page" : "تعديل الصفحة الرئيسية",
+        "name": "الاسم",
+        "descriptionName": "اسم الوصف",
+        "description": "الوصف",
+        "img": "الصورة",
+        "update-btn": "تحديث",
+        "create-btn": "انشاء"
+        
+      }
+   
+    },
+    "projects": {
+      "projects": "المشاريع",
+      "all-of-my-projects": "كل مشاريعي",
+      "update-project-btn": "تحديث المشروع",
+      "add-project-btn": "إضافة مشروع",
+      "delete-project-btn": "حذف المشروع",
+      "projects-not-found": "لم يتم العثور على مشاريع",
+      "projects-management": {
+        "create-project" : "انشاء مشروع",
+        "tecnologies": "التقنيات",
+        "title": "العنوان",
+        "description": "الوصف",
+        "url-one": "الرابط الاول",
+        "url-two": "الرابط الثاني",
+        "img": "الصورة",
+        "create-btn": "انشاء"
+      }
+    },
+    "about": {
+      "about-me": "عني",
+      "who-am-i": "من انا",
+      "skills": "المهارات",
+      "programmingLanguages": "لغات البرمجة",
+      "data-bases": "قواعد البيانات",
+      "other": "اخرى",
+      "tools": "الادوات",
+      "freameworks": "أطر العمل",
+      "update-about-btn": "تحديث المعلومات"
+    },
+    "contact": {
+      "update-contact-btn": "تحديث التواصل"
+    },
+
+    "validation": {
+      "required": "هذا الحقل مطلوب",
+      "email": "البريد الإلكتروني غير صالح",
+      "invalidEmail": "صيغة البريد الإلكتروني غير صالحة",
+      "minLength": "القيمة قصيرة جدا",
+      "maxLength": "القيمة طويلة جدا",
+      "pattern": "صيغة غير صالحة",
+      "min": "القيمة قصيرة جدا",
+      "max": "القيمة طويلة جدا",
+      "minDate": "التاريخ قد تكون أقل",
+      "maxDate": "التاريخ قد تكون أكبر",
+      "invalidDate": "تاريخ غير صالح",
+      "invalidTime": "وقت غير صالح",
+      "invalidDateFormat": "صيغة التاريخ غير صالحة",
+      "invalidTimeFormat": "صيغة الوقت غير صالحة",
+      "invalidDateRange": "نطاق التاريخ غير صالح",
+      "invalidTimeRange": "نطاق الوقت غير صالح",
+      "invalidDateTime": "تاريخ ووقت غير صالح",
+      "invalidDateTimeFormat": "صيغة تاريخ ووقت غير صالحة",
+      "invalidDateTimeRange": "نطاق تاريخ ووقت غير صالح",
+      "invalidDateTimeRangeFormat": "صيغة نطاق تاريخ ووقت غير صالحة",
+      "missingUpperCase": "يجب أن تحتوي كلمة المرور على حرف كبير",
+      "missingNumber": "يجب أن تحتوي كلمة المرور على رقم",
+      "missingSpecialChar": "يجب أن تحتوي كلمة المرور على حرف خاص"
+    }
+  }
+}

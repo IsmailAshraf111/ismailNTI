@@ -1,35 +1,41 @@
+
+
 <div class="container">
   <div class="contact">
-    <h1><span>#</span>{{ contact.titleBox }}</h1>
+    <h1><span>#</span>{{ contact.headerContact }}</h1>
   </div>
-  <div class="all-contact">
-    <div class="contact-p row d-flex justify-content-between">
-      <div class="col-12 col-md-6">
-        <p>{{ contact.description }}</p>
-      </div>
-      <div class="message col-12 col-md-6">
-        <h4>{{ contact.descIconOne }}</h4>
-        <a class="m-3" [href]="contact.linkOne">
-          <img [src]="contact.iconOne" alt="icon" /> {{ contact.descIconOne }}
-        </a>
-        <br />
-        <a class="m-3" [href]="contact.linkTwo">
-          <img [src]="contact.iconTwo" alt="icon" /> {{ contact.descIconTwo }}
-        </a>
+  <div class="all-contact d-flex justify-content-between">
+    <div class="contact-p row ">
+      <div class="col-12 col-md-6-12">
+        <p>{{ contact.titleBox }}</p>
       </div>
     </div>
+      <div class="message col-12 col-md-6-12">
+        <h4>{{ contact.descriptionBox }}</h4>
+        <a class="m-3" [href]="contact.linkIconOne">
+           <i class="pi {{ contact.iconeOne }}"></i><span>{{contact.descIconOne}}</span>
+        </a>
+        <br />
+        <a class="m-3" [href]="contact.linkIconTwo">
+          <i class="pi {{ contact.iconeTwo }}"></i><span>{{contact.descIconTwo}}</span>
+        </a>
+      </div>
+ 
   </div>
 
-  <button icone="pi pi-pencil" routerLink="/contact-me-management">Update Contact</button>
+  <!-- <button icone="pi pi-pencil" routerLink="/contact-me-management">
+    Update Contact
+  </button> -->
+  <div class="mb-5 d-flex justify-content-center">
+
+  <p-button
+  icon="pi pi-pencil"
+  label="Update Contact"
+  routerLink="/contact-me-management"
+></p-button>
 
 </div>
-
-
-
-
-
-
-
+</div>
 
 <!-- <div class="container">
   <div class="contact">
@@ -57,9 +63,6 @@
 
 
  -->
-
-
-
 
 <!-- <div class="container">
 

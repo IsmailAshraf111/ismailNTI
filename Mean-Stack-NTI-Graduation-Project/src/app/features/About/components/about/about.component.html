@@ -1,14 +1,16 @@
 <div class="container">
   <div class="path">
-    <h1 class="fw-bold"><span>/</span>about-me</h1>
-    <p>who am i</p>
+    <h1 class="fw-bold">
+      <span>#</span>{{ "app.about.about-me" | translate }}
+    </h1>
+    <p>{{ "app.about.who-am-i" | translate }}</p>
   </div>
 
   <div class="about row">
-    <div class="img col-12 col-md-6">
-      <img src="Image.png" alt="About Image" />
+    <div class="img col-12 col-md-6 d-flex justify-content-center">
+      <img src="imgs/Image.png" alt="About Image" />
     </div>
-    <div class="content col-12 col-md-6">
+    <div *ngIf="about" class="content col-12 col-md-6">
       <p class="about__description">
         {{ about.description }}
       </p>
@@ -16,54 +18,173 @@
   </div>
 
   <div class="skil">
-    <h1 class="fw-bold"><span>#</span>skills</h1>
+    <h1 class="fw-bold"><span>#</span>{{ "app.about.skills" | translate }}</h1>
   </div>
 
-  <div class="skills">
-    <div class="all-skills row">
-      <div class="skills-content col-3">
-        <div class="name">Languages</div>
+  <div class="skills d-flex justify-content-between align-items-center rwo">
+    <div class="svgAll">
+      <div class="svg d-flex justify-content-between mb-3 col-12 col-md-6-12">
+        <span class="mt-5">
+          <svg
+            width="84"
+            height="84"
+            viewBox="0 0 84 84"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="2" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="2" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="2" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="2" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="2" cy="82" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="82" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="82" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="82" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="82" r="2" fill="#ABB2BF" />
+          </svg>
+        </span>
+      </div>
+      <div class="d-flex justify-content-between">
+        <span class="mt-5 me-5">
+          <svg
+            width="114"
+            height="114"
+            viewBox="0 0 114 114"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <mask id="path-1-inside-1_4_64" fill="white">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M57.5 0H85.75H114V28.25V56.5V84.75H85.75H57.5V56.5H85.75V28.25H57.5V0Z"
+              />
+            </mask>
+            <path
+              d="M57.5 0V-1H56.5V0H57.5ZM114 0H115V-1H114V0ZM114 84.75V85.75H115V84.75H114ZM57.5 84.75H56.5V85.75H57.5V84.75ZM57.5 56.5V55.5H56.5V56.5H57.5ZM85.75 56.5V57.5H86.75V56.5H85.75ZM85.75 28.25H86.75V27.25H85.75V28.25ZM57.5 28.25H56.5V29.25H57.5V28.25ZM85.75 -1H57.5V1H85.75V-1ZM114 -1H85.75V1H114V-1ZM115 28.25V0H113V28.25H115ZM115 56.5V28.25H113V56.5H115ZM115 84.75V56.5H113V84.75H115ZM85.75 85.75H114V83.75H85.75V85.75ZM85.75 83.75H57.5V85.75H85.75V83.75ZM58.5 84.75V56.5H56.5V84.75H58.5ZM57.5 57.5H85.75V55.5H57.5V57.5ZM84.75 28.25V56.5H86.75V28.25H84.75ZM57.5 29.25H85.75V27.25H57.5V29.25ZM56.5 0V28.25H58.5V0H56.5Z"
+              fill="#C778DD"
+              mask="url(#path-1-inside-1_4_64)"
+            />
+            <mask
+              id="path-3-outside-2_4_64"
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="27.2501"
+              width="59"
+              height="87"
+              fill="black"
+            >
+              <rect fill="white" y="27.2501" width="59" height="87" />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1 28.2501H29.25H57.5V56.5001H29.25V84.7501H57.5V113H29.25H1V84.7501V56.5001V28.2501Z"
+              />
+            </mask>
+            <path
+              d="M1 28.2501V27.2501H0V28.2501H1ZM57.5 28.2501H58.5V27.2501H57.5V28.2501ZM57.5 56.5001V57.5001H58.5V56.5001H57.5ZM29.25 56.5001V55.5001H28.25V56.5001H29.25ZM29.25 84.7501H28.25V85.7501H29.25V84.7501ZM57.5 84.7501H58.5V83.7501H57.5V84.7501ZM57.5 113V114H58.5V113H57.5ZM1 113H0V114H1V113ZM29.25 27.2501H1V29.2501H29.25V27.2501ZM57.5 27.2501H29.25V29.2501H57.5V27.2501ZM58.5 56.5001V28.2501H56.5V56.5001H58.5ZM29.25 57.5001H57.5V55.5001H29.25V57.5001ZM30.25 84.7501V56.5001H28.25V84.7501H30.25ZM29.25 85.7501H57.5V83.7501H29.25V85.7501ZM56.5 84.7501V113H58.5V84.7501H56.5ZM57.5 112H29.25V114H57.5V112ZM1 114H29.25V112H1V114ZM0 84.7501V113H2V84.7501H0ZM0 56.5001V84.7501H2V56.5001H0ZM0 28.2501V56.5001H2V28.2501H0Z"
+              fill="#C778DD"
+              mask="url(#path-3-outside-2_4_64)"
+            />
+          </svg>
+        </span>
+        <span class="mb-3 ml-2">
+          <svg
+            width="84"
+            height="84"
+            viewBox="0 0 84 84"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="2" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="2" r="2" fill="#ABB2BF" />
+            <circle cx="2" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="22" r="2" fill="#ABB2BF" />
+            <circle cx="2" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="42" r="2" fill="#ABB2BF" />
+            <circle cx="2" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="62" r="2" fill="#ABB2BF" />
+            <circle cx="2" cy="82" r="2" fill="#ABB2BF" />
+            <circle cx="22" cy="82" r="2" fill="#ABB2BF" />
+            <circle cx="42" cy="82" r="2" fill="#ABB2BF" />
+            <circle cx="62" cy="82" r="2" fill="#ABB2BF" />
+            <circle cx="82" cy="82" r="2" fill="#ABB2BF" />
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="all-skills row d-flex justify-content-center">
+      <div class="skills-content col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="name">{{'app.about.programmingLanguages' | translate}}</div>
         <ul class="skills-list">
-          <li *ngFor="let lang of about.languages">{{ lang }}</li>
+          <li>{{ about.languages }}</li>
         </ul>
       </div>
 
-      <div class="skills-content col-3">
-        <div class="name">Databases</div>
+      <div class="skills-content col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="name">{{'app.about.data-bases' | translate}}</div>
         <ul class="skills-list">
-          <li *ngFor="let db of about.databases">{{ db }}</li>
+          <li>{{ about.databases }}</li>
         </ul>
       </div>
 
-      <div class="skills-content col-3">
-        <div class="name">Other</div>
+      <div class="skills-content col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="name">{{'app.about.other' | translate}}</div>
         <ul class="skills-list">
-          <li *ngFor="let other of about.otherSkills">{{ other }}</li>
+          <li>{{ about.otherSkills }}</li>
         </ul>
       </div>
 
-      <div class="skills-content col-3">
-        <div class="name">Tools</div>
+      <div class="skills-content col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="name">{{'app.about.tools' | translate}}</div>
         <ul class="skills-list">
-          <li *ngFor="let tool of about.tools">{{ tool }}</li>
+          <li>{{ about.tools }}</li>
         </ul>
       </div>
 
-      <div class="skills-content col-3">
-        <div class="name">Frameworks</div>
+      <div class="skills-content col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="name">{{'app.about.freameworks' | translate}}</div>
         <ul class="skills-list">
-          <li *ngFor="let framework of about.frameworks">{{ framework }}</li>
+          <li>{{ about.frameworks }}</li>
         </ul>
       </div>
     </div>
   </div>
-  <button icone="pi pi-pencil" routerLink="/about-meManagement">Update About</button>
-
+  <div class="d-flex justify-content-center">
+    <p-button
+      icon="pi pi-pencil"
+      label="Update About"
+      routerLink="/about-meManagement"
+      class="mt-3"
+    ></p-button>
+  </div>
 </div>
-
-
-
-
-
-
-

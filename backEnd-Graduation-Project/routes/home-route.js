@@ -18,7 +18,7 @@ router.get('/', homeController.getHomeData);
 
 router.put('/:id', upload.single('img'), homeController.updateMetaData);
 
-// router.post('/create', upload.single('img'), homeController.createMetaData);
+router.post('/', upload.single('img'), homeController.createMetaData);
 // router.delete('/:id', homeController.deleteMetaData);
 
 module.exports = router;

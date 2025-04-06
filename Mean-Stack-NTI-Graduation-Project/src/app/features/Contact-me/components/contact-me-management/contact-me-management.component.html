@@ -1,17 +1,148 @@
 <div class="container">
+  <form>
     <div class="editH">
-        <h1  class="text-center">Edit Contact Me</h1>
-
-
+      <h1 class="text-center">Edit Contact Me</h1>
     </div>
-    <form (submit)="updateContact()">
-      <input [(ngModel)]="contact.titleBox" placeholder="Edit Title" name="titleBox" />
-      <input [(ngModel)]="contact.description" placeholder="Edit Description" name="description" />
-      <input [(ngModel)]="contact.iconOne" placeholder="Edit Icon 1" name="iconOne" />
-      <input [(ngModel)]="contact.descIconOne" placeholder="Edit Icon 1 Title" name="descIconOne" />
-      <input [(ngModel)]="contact.iconTwo" placeholder="Edit Icon 2" name="iconTwo" />
-      <input [(ngModel)]="contact.descIconTwo" placeholder="Edit Icon 2 Title" name="descIconTwo" />
-      <button type="submit">Update</button>
-    </form>
+    <div class="form-group">
+      <app-input
+        [label]="'headerContact'"
+        [placeholder]="'Edit headerContact'"
+        [formGroup]="contactForm"
+        [controlName]="'headerContact'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+
+    <div class="form-group">
+      <app-input
+        [label]="'titleBox'"
+        [placeholder]="'Edit titleBox'"
+        [formGroup]="contactForm"
+        [controlName]="'titleBox'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <div class="form-group">
+      <app-input
+        [label]="'descriptionBox'"
+        [placeholder]="'Edit descriptionBox'"
+        [formGroup]="contactForm"
+        [controlName]="'descriptionBox'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <div class="form-group">
+      <app-input
+        [label]="'Description'"
+        [placeholder]="'Edit Description'"
+        [formGroup]="contactForm"
+        [controlName]="'description'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <div class="form-group">
+      <app-input
+        [label]="'linkIconOne'"
+        [placeholder]="'Edit linkIconOne'"
+        [formGroup]="contactForm"
+        [controlName]="'linkIconOne'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <div class="form-group">
+      <app-input
+        [label]="'descIconOne'"
+        [placeholder]="'Edit descIconOne'"
+        [formGroup]="contactForm"
+        [controlName]="'descIconOne'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <div class="form-group">
+      <app-input
+        [label]="'iconeOne'"
+        [placeholder]="'Edit iconeOne'"
+        [formGroup]="contactForm"
+        [controlName]="'iconeOne'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <div class="form-group">
+      <app-input
+        [label]="'linkIconTwo'"
+        [placeholder]="'Edit linkIconTwo'"
+        [formGroup]="contactForm"
+        [controlName]="'linkIconTwo'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <div class="form-group">
+      <app-input
+        [label]="'descIconTwo'"
+        [placeholder]="'Edit descIconTwo'"
+        [formGroup]="contactForm"
+        [controlName]="'descIconTwo'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <div class="form-group">
+      <app-input
+        [label]="'iconeTwo'"
+        [placeholder]="'Edit iconeTwo'"
+        [formGroup]="contactForm"
+        [controlName]="'iconeTwo'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <button class="btn btn-primary" (click)="onSubmit()">onSubmit</button>
+  </form>
+</div>
+
+<!-- <div class="container">
+  <div class="editH">
+    <h1 class="text-center">Edit Contact Me</h1>
   </div>
-  
+  <form (submit)="createContact()">
+    <input
+      [(ngModel)]="contact.titleBox"
+      placeholder="Edit Title"
+      name="titleBox"
+    />
+    <input
+      [(ngModel)]="contact.description"
+      placeholder="Edit Description"
+      name="description"
+    />
+    <input
+      [(ngModel)]="contact.iconOne"
+      placeholder="Edit Icon 1"
+      name="iconOne"
+    />
+    <input
+      [(ngModel)]="contact.descIconOne"
+      placeholder="Edit Icon 1 Title"
+      name="descIconOne"
+    />
+    <input
+      [(ngModel)]="contact.iconTwo"
+      placeholder="Edit Icon 2"
+      name="iconTwo"
+    />
+    <input
+      [(ngModel)]="contact.descIconTwo"
+      placeholder="Edit Icon 2 Title"
+      name="descIconTwo"
+    />
+    <button type="submit">Update</button>
+  </form>
+</div> -->

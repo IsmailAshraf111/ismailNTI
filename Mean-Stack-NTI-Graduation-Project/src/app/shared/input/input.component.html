@@ -17,7 +17,7 @@
   @if (hasError) {
   <div class="error-container">
     @for (message of errMessage; track $index) {
-    <span [class]="errorClass">{{ message }}</span>
+    <span [class]="errorClass">{{ message | translate  }}</span>
     }
   </div>
   }

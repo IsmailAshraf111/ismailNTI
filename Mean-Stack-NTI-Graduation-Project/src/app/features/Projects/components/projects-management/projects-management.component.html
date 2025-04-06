@@ -1,124 +1,97 @@
 <div class="projects-management-container">
-  <div class="editH">
-    <h1 class="text-center">add Projects</h1>
-
-
-  </div >
+ 
   <div class="form-container">
     <form [formGroup]="projectsForm">
-      <div>
-        <!-- <label for="tech">Technology</label>
-        <input id="tech" formControlName="tech" type="text"> -->
+      <div class="editH">
+        <h1 class="text-center">{{'app.projects.projects-management.create-project' | translate }}</h1>
+      </div>
+      <div class="form-group">
         <app-input
-        [label]="'Technology'"
-        [id]="'tech'"
-        [formGroup]="projectsForm"
-        [controlName]="'tech'"
-        [required]="true"
-        [className]="'form-control'"
-
-        type="text"
-  
+          [label]="'app.projects.projects-management.tecnologies' | translate"
+          [id]="'tech'"
+          [formGroup]="projectsForm"
+          [controlName]="'tech'"
+          [required]="true"
+          [className]="'form-control'"
+          type="text"
         ></app-input>
       </div>
-  
-      <div>
-        <!-- <label for="title">Title</label>
-        <input id="title" formControlName="title" type="text"> -->
-        <app-input
-        [label]="'Title'"
-        [id]="'title'"
-        [formGroup]="projectsForm"
-        [controlName]="'title'"
-        [required]="true"
-        [className]="'form-control'"
 
-        type="text"
+      <div class="form-group">
+        <app-input
+          [label]="'app.projects.projects-management.title' | translate"
+          [id]="'title'"
+          [formGroup]="projectsForm"
+          [controlName]="'title'"
+          [required]="true"
+          [className]="'form-control'"
+          type="text"
         ></app-input>
       </div>
-  
-      <div>
-        <!-- <label for="description">Description</label>
-        <textarea id="description" formControlName="description"></textarea> -->
-        <app-input
-        [label]="'Description'"
-        [id]="'description'"
-        [formGroup]="projectsForm"
-        [controlName]="'description'"
-        [required]="true"
-        [className]="'form-control'"
 
-        type="text"
+      <div class="form-group">
+        <app-input
+          [label]="'app.projects.projects-management.description' | translate"
+          [id]="'description'"
+          [formGroup]="projectsForm"
+          [controlName]="'description'"
+          [required]="true"
+          [className]="'form-control'"
+          type="text"
         ></app-input>
       </div>
-  
-      <div>
-        <!-- <label for="btnOneTitle">Button 1 Title</label>
-        <input id="btnOneTitle" formControlName="btnOneTitle" type="text"> -->
-        <app-input
-        [label]="'Button 1 Title'"
-        [id]="'btnOneTitle'"
-        [formGroup]="projectsForm"
-        [controlName]="'btnOneTitle'"
-        [required]="true"
-        [className]="'form-control'"
 
-        type="text"
+      <div class="form-group">
+        <app-input
+          [label]="'app.projects.projects-management.url-one' | translate"
+          [id]="'btnOneTitle'"
+          [formGroup]="projectsForm"
+          [controlName]="'btnOneTitle'"
+          [required]="true"
+          [className]="'form-control'"
+          type="text"
         ></app-input>
       </div>
-  
-      <div>
-        <!-- <label for="btnTwoTitle">Button 2 Title</label>
-        <input id="btnTwoTitle" formControlName="btnTwoTitle" type="text"> -->
-        <app-input
-        [label]="'Button 2 Title'"
-        [id]="'btnTwoTitle'"
-        [formGroup]="projectsForm"
-        [controlName]="'btnTwoTitle'"
-        [required]="true"
-        [className]="'form-control'"
 
-        type="text"
+      <div class="form-group">
+        <app-input
+          [label]="'app.projects.projects-management.url-two' | translate"
+          [id]="'btnTwoTitle'"
+          [formGroup]="projectsForm"
+          [controlName]="'btnTwoTitle'"
+          [required]="true"
+          [className]="'form-control'"
+          type="text"
         ></app-input>
       </div>
-  
-      <div>
+
+      <div class="form-group text-center">
         <!-- <label for="imgUrl">Image URL</label>
         <input id="imgUrl" formControlName="imgUrl" type="file" (change)="onImageChange($event)"> -->
+        <label for="imgUrl">{{'app.projects.projects-management.img' | translate}}</label>
         <app-input
-        [label]="'Image URL'"
-        [id]="'imgUrl'"
-        [formGroup]="projectsForm"
-        [controlName]="'imgUrl'"
-        [required]="true"
-        type="file"
-        (change)="onImageChange($event)"
-        [className]="'form-control'"
-
+          [id]="'imgUrl'"
+          [formGroup]="projectsForm"
+          [controlName]="'imgUrl'"
+          [required]="true"
+          type="file"
+          (change)="onImageChange($event)"
+          [className]="'form-control '"
         ></app-input>
       </div>
-  
-      <button type="submit" (click)="onSubmit()" [disabled]="!projectsForm.valid">Submit</button>
+      <!-- <button
+        type="submit"
+        (click)="onSubmit()"
+        [disabled]="!projectsForm.valid"
+      >
+        Submit
+      </button> -->
+      <p-button
+      type="submit"
+      (click)="onSubmit()"
+      [disabled]="!projectsForm.valid"
+      class="d-flex justify-content-center"
+      >{{'app.projects.projects-management.create-btn' | translate}}</p-button>
     </form>
-  
   </div>
- 
-  <!-- <button *ngIf="projectsForm.value.id" (click)="deleteProject(projectsForm.value.id) ">Delete Project</button> -->
-</div>
-
-<div class="projects-list  ">
-  <div class="editH">
-    <h1>All Projects</h1>
-
-
-  </div>
-  <ul>
-    <li *ngFor="let projectt of projects">
-      <h4>{{ projectt.title }}</h4>
-      <p>{{ projectt.description }}</p>
-      <img *ngIf="projectt.imgUrl" [src]="projectt.imgUrl" alt="Project Image" class="projectt-image" />
-   <!-- <button (click)="editProject(projectt)">Edit</button>
-      <button (click)="deleteProject(projectt._id)">Delete</button>  -->
-    </li>
-  </ul>
 </div>

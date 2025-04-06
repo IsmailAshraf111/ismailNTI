@@ -1,122 +1,112 @@
 :root {
-    --primary: #b152da;
-    --primary-op: #b152da1a;
-    --gray: #96a2b9;
-    --gray-op: #96a2b91a;
-    --background: #262b33;
-    --white: #ffffff;
-  }
-
-.all{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 100px;
-    
+  --primary: #b152da;
+  --primary-op: #b152da1a;
+  --gray: #96a2b9;
+  --gray-op: #96a2b91a;
+  --background: #262b33;
+  --white: #ffffff;
 }
 
-.all-home-M{
-   
-
+.all {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 100px;
 }
 
-input{
-    margin-top: 20px;
-    width: 20rem;
-    padding: 1rem 1rem;
-    background-color: var(--primary-op);
-    border: none;
-    border: 1px solid var(--primary);
-    
-
-
+.all-home-M {
 }
 
-form{
+input {
+  margin-top: 20px;
+  width: 20rem;
+  padding: 1rem 1rem;
+  background-color: var(--primary-op);
+  border: none;
+  border: 1px solid var(--primary);
+}
+
+form {
   padding: 3rem;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 40px 6px rgba(0, 0, 0, 0.1);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-color: var(--primary-op);
-    margin-top: 100px;
-    margin-bottom: 200px;
-    color: var(--primary);
-    text-align: center;
-  
+  margin-top: 100px;
+  margin-bottom: 200px;
+  color: var(--primary);
+  text-align: center;
 }
 
-input::placeholder{
-    color: var(--primary);
+input::placeholder {
+  color: var(--primary);
 }
 
-input:focus{
-   color:  var(--primary);
+input:focus {
+  color: var(--primary);
 }
 
-button{
-    margin-top: 20px;
-border: 1px solid var(--primary);
-color: var(--white);
-width: 7rem;
-padding: .5rem .5rem;
-background: none;
+button {
+  margin-top: 20px;
+  border: 1px solid var(--primary);
+  color: var(--white);
+  width: 7rem;
+  padding: 0.5rem 0.5rem;
+  background: none;
+  border-radius: 0 ;
 
-}
-
-button:hover{
+  &:hover {
     background-color: var(--primary-op);
-
-
+    border: 1px solid var(--primary);
+  }
 }
 
-.editH h1{
-        font-size: 3rem;
-        font-weight: bold;
-        background: linear-gradient(90deg, var(--primary), var(--gray), #b152da, var(--primary-op), var(--white), purple);
-        background-size: 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: moveBackground 3s infinite linear;
-  
-    
-
+.editH h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--gray),
+    #b152da,
+    var(--primary-op),
+    var(--white),
+    purple
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveBackground 3s infinite linear;
 }
-
 
 @keyframes moveBackground {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
   }
-
-  .square {
-    width: 200px;
-    height: 200px;
-    border: 2px solid var(--primary);
-    position: absolute;
-    z-index: -200;
-    top: 90%;
-    left: 70%;  
+  100% {
+    background-position: 100% 50%;
   }
+}
 
-  
-  
+/* .square {
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--primary);
+  position: absolute;
+  z-index: -200;
+  top: 90%;
+  left: 70%;
+}
+
 .square1 {
   margin-top: 20px;
-
 }
 
 .square2 {
   margin-left: 20px;
-
-
 }
-
 
 .dots-grid {
   position: relative;
@@ -129,7 +119,6 @@ button:hover{
   z-index: 100;
   right: 350px;
   bottom: 100px;
-
 }
 
 .dots-grid:after {
@@ -147,5 +136,4 @@ button:hover{
   );
   background-size: var(--dots-bg-size) var(--dots-bg-size);
   background-position: center;
-}
-  
+} */

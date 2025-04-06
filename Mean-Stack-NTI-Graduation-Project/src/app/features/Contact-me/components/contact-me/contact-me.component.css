@@ -7,25 +7,23 @@
   --white: #ffffff;
 }
 
-.all-contact{
+.all-contact {
   height: 50vh;
   display: flex;
   align-items: center;
 }
 
-.contact h1 span {
-  color:var(--primary) ;
-}
-
 .contact {
-    color: var(--white);
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-    margin-top: 50px;
+  color: var(--white);
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin-top: 50px;
+
+  h1 span {
+    color: var(--primary);
   }
-  
-  .contact::after {
+  ::after {
     content: "";
     position: absolute;
     bottom: 30px;
@@ -34,28 +32,63 @@
     height: 2px;
     background-color: var(--primary);
   }
+}
 
-  .contact-p {
-    margin-top: 50px;
-  }
-  .contact-p p {
+.contact-p {
+  margin-top: 50px;
+
+  p {
     color: var(--gray);
+  }
+}
+
+.message {
+  color: var(--white);
+  border: 1px solid var(--gray);
+  padding: 20px;
+  width: 20rem;
+  h4 {
+    font-size: 16px;
+    font-weight: bold;
 
   }
 
-  .message{
-    color: var(--white);
-    border: 1px solid var(--gray);
-    padding: 20px;
-    width: 20rem;
-
-  }
-
-  .message a{
+  a {
     color: var(--gray);
     text-decoration: none;
+    margin-top: 20px;
   }
 
-  .message a:hover{
+  a:hover {
     color: var(--white);
-  } 
+  }
+
+a i {
+  margin-top: 10px;
+  font-size: 32px;
+  
+}
+a  span {
+  margin-left: 10px;
+  font-size: 16px;
+  
+  
+}
+}
+
+
+::ng-deep .p-button {
+  background: none !important;
+  border: 1px solid var(--primary) !important;
+  color: var(--white) !important;
+  border-radius: 0 !important;
+  margin: auto !important;
+
+  &:hover {
+    background: none !important;     
+    border-color: var(--primary) !important; 
+    color: var(--white) !important;   
+    box-shadow: none !important;     
+    transform: none !important;      
+  }
+}
