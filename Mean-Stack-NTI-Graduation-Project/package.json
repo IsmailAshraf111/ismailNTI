@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.2.5",
+    "@angular/cdk": "^19.2.8",
     "@angular/common": "^19.2.5",
     "@angular/compiler": "^19.2.5",
     "@angular/core": "^19.2.5",
@@ -21,6 +22,8 @@
     "@ngx-translate/core": "^16.0.4",
     "@ngx-translate/http-loader": "^16.0.1",
     "@primeng/themes": "^19.0.10",
+    "@tensorflow/tfjs": "^4.22.0",
+    "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
     "codemirror": "^6.0.1",
     "ngx-toastr": "^19.0.0",

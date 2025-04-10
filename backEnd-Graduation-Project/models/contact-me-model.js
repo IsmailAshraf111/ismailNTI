@@ -1,45 +1,39 @@
 const mongoose = require("mongoose");
 
 const contactSchema = new mongoose.Schema({
-  headerContact: { type: String, required: true },
   description: { type: String, required: true },
-  titleBox: { type: String, required: true },
-  descriptionBox: { type: String, required: true },
-  linkIconOne: { type: String, required: true },
-  descIconOne: { type: String, required: true },
-  iconeOne: { type: String, required: true },
-  linkIconTwo: { type: String, required: true },
-  descIconTwo: { type: String, required: true },
-  iconeTwo: { type: String, required: true },
+  boxTitle: { type: String, required: true },
+
+
+  // iconOneLink: { type: String, required: true },
+  // iconOneName: { type: String, required: true },
+  // iconOne: { type: String, required: true },
+  // IconTwoLink: { type: String, required: true },
+  // IconTwoName: { type: String, required: true },
+  // iconTwo: { type: String, required: true },
+
+  
+  phoneNumber: { type: Number,  required: true },
+  // communication: [
+  //   { link: { type: String, required: true } },
+  //   { name: { type: String, required: true } },
+  //   { icon: { type: String, required: true } },
+  // ]
+  communication: [
+    {
+      type: new mongoose.Schema(
+        {
+          link: { type: String, required: true },
+          name: { type: String, required: true },
+          icon: { type: String, required: true }
+        },
+        { _id: false }
+      )
+    }
+  ]
+  
 });
 
 const Contact = mongoose.model("Contact", contactSchema);
 
 module.exports = Contact;
-
-
-
-
-
-
-
-
-
-
-
-// const mongoose = require("mongoose");
-
-// const contactSchema = new mongoose.Schema({
-//   description: String,
-//   titlePox: String,
-//   iconeOne: String,
-//   DscrIconeOne: String,
-//   iconTwo: String,
-//   descIconeTwo: String,
-// });
-
-// // create model
-
-// const contact = mongoose.model("about", aboutSchema);
-
-// module.exports = contact;

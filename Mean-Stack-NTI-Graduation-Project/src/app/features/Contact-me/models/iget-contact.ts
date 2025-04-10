@@ -1,13 +1,15 @@
+import { ICommunication } from './icommunication';
+
 export interface IGetContact {
-    headerContact: string;
-    description: string;
-    titleBox: string;
-    descriptionBox: string;
-    linkIconOne: string;
-    descIconOne: string;
-    iconeOne: string;
-    linkIconTwo: string;
-    descIconTwo: string;
-    iconeTwo: string;
-    _id: string;
+  description: string;
+  boxTitle: string;
+  // iconOneLink: string;
+  // iconOneName: string;
+  // iconOne: string;
+  // IconTwoLink: string;
+  // IconTwoName: string;
+  // iconTwo: string;
+  phoneNumber: number;
+  communication: ICommunication[];
+  _id: string;
 }

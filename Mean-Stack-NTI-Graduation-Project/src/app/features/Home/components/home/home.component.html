@@ -102,6 +102,7 @@
       [label]="'app.home.update-home-btn' | translate"
       routerLink="/homeManagement"
       class="home-btn"
+      *ngIf="isLoggedIn()"
     ></p-button>
   </div>
 </div>

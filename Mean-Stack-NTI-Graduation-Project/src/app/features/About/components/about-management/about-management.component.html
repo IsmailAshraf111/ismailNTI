@@ -1,18 +1,17 @@
 <div class="container">
- 
   <form
     [formGroup]="aboutForm"
     (ngSubmit)="onSubmit()"
     enctype="multipart/form-data"
   >
-  <div class="editH">
-    <h1 class="text-center">Edit About Page</h1>
-  </div>
+    <div class="editH">
+      <h1 class="text-center">{{ "app.about.about-management.edit-about-page" | translate }}</h1>
+    </div>
     <div class="form-group">
       <textarea
         formControlName="description"
         name="description"
-        placeholder="Edit About Description"
+        [placeholder]="'app.about.about-management.description' | translate"
         rows="5"
         class="form-control"
       ></textarea>
@@ -20,7 +19,7 @@
 
     <div class="form-group">
       <app-input
-        [label]="'languages'"
+        [label]="'app.about.about-management.languages' | translate"
         [placeholder]="'e.g. JavaScript, TypeScript, Python'"
         [formGroup]="aboutForm"
         [controlName]="'languages'"
@@ -31,7 +30,7 @@
 
     <div class="form-group">
       <app-input
-        [label]="'databases'"
+        [label]="'app.about.about-management.databases' | translate"
         [placeholder]="'e.g. MongoDB, MySQL, PostgreSQL'"
         [formGroup]="aboutForm"
         [controlName]="'databases'"
@@ -42,7 +41,7 @@
 
     <div class="form-group">
       <app-input
-        [label]="'tools'"
+        [label]="'app.about.about-management.tools' | translate"
         [placeholder]="'e.g. Git, Docker, VS Code'"
         [formGroup]="aboutForm"
         [controlName]="'tools'"
@@ -53,7 +52,7 @@
 
     <div class="form-group">
       <app-input
-        [label]="'other Skills'"
+        [label]="'app.about.about-management.other-skills' | translate"
         [placeholder]="'e.g. Agile, Scrum, UX Design'"
         [formGroup]="aboutForm"
         [controlName]="'otherSkills'"
@@ -64,7 +63,7 @@
 
     <div class="form-group">
       <app-input
-        [label]="'frameworks'"
+        [label]="'app.about.about-management.frameworks' | translate"
         [placeholder]="'e.g. Angular, React, Express'"
         [formGroup]="aboutForm"
         [controlName]="'frameworks'"
@@ -73,16 +72,6 @@
       ></app-input>
     </div>
 
-    <button type="submit" [disabled]="!aboutForm.valid">create</button>
-    <!-- <button  (click)="onUpdate()" type="submit" [disabled]="!aboutForm.valid">update</button> -->
-    <!-- <div *ngIf="about of aboutData">
-      <p-button
-    
-      type="submit"
-      [disabled]="!aboutForm.valid"
-      (click)="onUpdate(aboutData._id)"
-      label="update"
-    ></p-button>
-     </div> -->
+    <button type="submit" [disabled]="!aboutForm.valid">{{ "app.about.about-management.update-btn" | translate }}</button>
   </form>
 </div>

@@ -7,7 +7,8 @@
       "services": "services",
       "contact": "contact-me",
       "login": "login",
-      "register": "register"
+      "register": "register",
+      "log-out": "log out"
     },
     "home": {
       "contact": "Contact me =>",
@@ -30,7 +31,7 @@
       "delete-project-btn": "Delete project",
       "projects-not-found": "Projects not found",
       "projects-management": {
-        "create-project": "Create project",
+        "create-project": "add project",
         "tecnologies": "tecnologies",
         "title": "Title",
         "description": "Description",
@@ -49,10 +50,51 @@
       "other": "other",
       "tools": "tools",
       "freameworks": "frameworks",
-      "update-about-btn": "Update about"
+      "update-about-btn": "Update about",
+      "about-management": {
+        "edit-about-page": "Edit About Page",
+        "languages": "Languages",
+        "databases": "Databases",
+        "tools": "Tools",
+        "other-skills": "Other Skills",
+        "frameworks": "Frameworks",
+        "name": "Name",
+        "descriptionName": "Description Name",
+        "description": "Description",
+        "img": "Image",
+        "update-btn": "Update",
+        "create-btn": "Create"
+      }
+
     },
     "contact": {
-      "update-contact-btn": "Update contact"
+      "contacts": "contacts",
+      "contact-me-title": "Contact me",
+      "update-contact-btn": "Update contact",
+      "contact-management": {
+        "edit-contact-page": "Edit Contact Page",
+        "description": "Description",
+        "box-title": "Box Title",
+        "link": "Link",
+        "icon": "Icon",
+        "name": "Name",
+        "submit": "Submit",
+        "phone-number": "phone number"
+      },
+      "whatsapp": {
+        "send-whatsapp-message": "Send whatsapp message",
+        "name": "Your name",
+        "your-message": "Your message",
+        "send": "Send"
+      }
+    
+ 
+    
+      
+    },
+    "footer": {
+      "all-rights-reserved": "All rights reserved",
+      "media": "media"
     },
 
     "validation": {

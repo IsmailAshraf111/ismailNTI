@@ -18,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about-management',
@@ -37,6 +38,7 @@ import { TooltipModule } from 'primeng/tooltip';
     ButtonModule,
     TooltipModule,
     RouterModule,
+    TranslatePipe
   ],
 })
 export class AboutManagementComponent implements OnInit {

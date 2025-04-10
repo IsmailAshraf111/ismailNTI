@@ -1,96 +1,113 @@
-
-
 <div class="container">
   <div class="contact">
-    <h1><span>#</span>{{ contact.headerContact }}</h1>
+    <!-- <h1><span>#</span>{{ contact.headerContact }}</h1> -->
+    <h1><span>#</span>{{ "app.contact.contacts" | translate }}</h1>
   </div>
-  <div class="all-contact d-flex justify-content-between">
-    <div class="contact-p row ">
+  <div
+   
+    class="all-contact d-flex justify-content-between"
+  >
+    <div class="contact-p row">
       <div class="col-12 col-md-6-12">
-        <p>{{ contact.titleBox }}</p>
-      </div>
-    </div>
-      <div class="message col-12 col-md-6-12">
-        <h4>{{ contact.descriptionBox }}</h4>
-        <a class="m-3" [href]="contact.linkIconOne">
-           <i class="pi {{ contact.iconeOne }}"></i><span>{{contact.descIconOne}}</span>
-        </a>
-        <br />
-        <a class="m-3" [href]="contact.linkIconTwo">
-          <i class="pi {{ contact.iconeTwo }}"></i><span>{{contact.descIconTwo}}</span>
-        </a>
-      </div>
- 
-  </div>
-
-  <!-- <button icone="pi pi-pencil" routerLink="/contact-me-management">
-    Update Contact
-  </button> -->
-  <div class="mb-5 d-flex justify-content-center">
-
-  <p-button
-  icon="pi pi-pencil"
-  label="Update Contact"
-  routerLink="/contact-me-management"
-></p-button>
-
-</div>
-</div>
-
-<!-- <div class="container">
-  <div class="contact">
-    <h1><span>#</span>{{ contact.titleBox }}</h1>
-  </div>
-  <div class="all-contact">
-    <div class="contact-p row d-flex justify-content-between">
-      <div class="col-12 col-md-6">
         <p>{{ contact.description }}</p>
       </div>
-      <div class="message col-12 col-md-6">
-        <h4>{{ contact.descIconOne }}</h4>
-        <a class="m-3" href="#">
-          <img [src]="contact.iconOne" alt="icon" /> {{ contact.descIconOne }}
-        </a>
-        <br />
-        <a class="m-3" href="#">
-          <img [src]="contact.iconTwo" alt="icon" /> {{ contact.descIconTwo }}
+    </div>
+    <div class="message col-12 col-md-6-12">
+      <h4>{{ contact.boxTitle }}</h4>
+
+      <div *ngFor="let comm of contact.communication">
+        <a class="m-3" [href]="comm.link">
+          <i class="pi {{ comm.icon }}"></i><span>{{ comm.name }}</span>
         </a>
       </div>
+
+      <!-- <br />
+      <a class="m-3" [href]="contact.IconTwoLink">
+        <i class="pi {{ contact.iconTwo }}"></i
+        ><span>{{ contact.IconTwoName }}</span>
+      </a> -->
     </div>
+  </div>
+  <div class="mb-5 d-flex justify-content-center">
+    <p-button
+      icon="pi pi-pencil"
+      [label]="'app.contact.update-contact-btn' | translate"
+      routerLink="/contact-me-management"
+      *ngIf="isLoggedIn()"
+    ></p-button>
+  </div>
+  <div class="whatsapp row">
+    <div class="squares">
+      <div class="square square1"></div>
+      <div class="square square2"></div>
+    </div>
+    <form (ngSubmit)="sendWhatsappMessage()" [formGroup]="whatsappForm">
+      <div class="svg-grid">
+        <svg
+          width="84"
+          height="84"
+          viewBox="0 0 84 84"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="2" cy="2" r="2" fill="#ABB2BF" />
+          <circle cx="22" cy="2" r="2" fill="#ABB2BF" />
+          <circle cx="42" cy="2" r="2" fill="#ABB2BF" />
+          <circle cx="62" cy="2" r="2" fill="#ABB2BF" />
+          <circle cx="82" cy="2" r="2" fill="#ABB2BF" />
+          <circle cx="2" cy="22" r="2" fill="#ABB2BF" />
+          <circle cx="22" cy="22" r="2" fill="#ABB2BF" />
+          <circle cx="42" cy="22" r="2" fill="#ABB2BF" />
+          <circle cx="62" cy="22" r="2" fill="#ABB2BF" />
+          <circle cx="82" cy="22" r="2" fill="#ABB2BF" />
+          <circle cx="2" cy="42" r="2" fill="#ABB2BF" />
+          <circle cx="22" cy="42" r="2" fill="#ABB2BF" />
+          <circle cx="42" cy="42" r="2" fill="#ABB2BF" />
+          <circle cx="62" cy="42" r="2" fill="#ABB2BF" />
+          <circle cx="82" cy="42" r="2" fill="#ABB2BF" />
+          <circle cx="2" cy="62" r="2" fill="#ABB2BF" />
+          <circle cx="22" cy="62" r="2" fill="#ABB2BF" />
+          <circle cx="42" cy="62" r="2" fill="#ABB2BF" />
+          <circle cx="62" cy="62" r="2" fill="#ABB2BF" />
+          <circle cx="82" cy="62" r="2" fill="#ABB2BF" />
+          <circle cx="2" cy="82" r="2" fill="#ABB2BF" />
+          <circle cx="22" cy="82" r="2" fill="#ABB2BF" />
+          <circle cx="42" cy="82" r="2" fill="#ABB2BF" />
+          <circle cx="62" cy="82" r="2" fill="#ABB2BF" />
+          <circle cx="82" cy="82" r="2" fill="#ABB2BF" />
+        </svg>
+      </div>
+
+      <h1>
+        <span><i class="pi pi-whatsapp"></i></span>
+        {{ "app.contact.whatsapp.send-whatsapp-message" | translate }}
+      </h1>
+
+      <app-input
+        [label]="'app.contact.whatsapp.name' | translate"
+        [formGroup]="whatsappForm"
+        [controlName]="'name'"
+        [type]="'text'"
+        [className]="'form-control col-12 col-md-6-12'"
+      ></app-input>
+      <textarea
+        name="message"
+        formControlName="message"
+        [placeholder]="'app.contact.whatsapp.your-message' | translate"
+        class="form-control col-12 col-md-6-12"
+        required
+      ></textarea>
+
+      <!-- <button  class="btn btn-primary whatsapp-btn" type="submit" [disabled]="!whatsappForm.valid">
+       <i class="pi pi-whatsapp"></i>  Send
+      </button> -->
+      <p-button
+        icon="pi pi-whatsapp"
+        [label]="'app.contact.whatsapp.send' | translate"
+        type="submit"
+        class="whatsapp-btn"
+        [disabled]="!whatsappForm.valid"
+      ></p-button>
+    </form>
   </div>
 </div>
-
-
-
- -->
-
-<!-- <div class="container">
-
-
-
-  <div class="contact">
-    <h1 class=""><span>#</span>contact-me</h1>
-  </div>
-  <div class="all-contact ">
-
-  <div class="contact-p row d-flex justify-content-between">
-    <div class="col-12 col-md-6">
-      <p>
-        I’m interested in freelance opportunities. However, if you have other
-        request or question, don’t hesitate to contact me
-      </p>
-    </div>
-
-    <div class="message col-12 col-md-6">
-      <h4>message me here</h4>
-      <a class="m-3" href="https://discord.com/users/881980655754432513"
-        ><img src="Discord.svg" alt="icon" /> ismail__ashraf</a
-      >
-      <br />
-      <a class="m-3" href="mailto:ismailatta11@gmail.com"
-        ><img src="Email.svg" alt="icon" /> ismailatta11&#64;gmail.com</a
-      >
-    </div>
-  </div>
-</div>
-</div> -->

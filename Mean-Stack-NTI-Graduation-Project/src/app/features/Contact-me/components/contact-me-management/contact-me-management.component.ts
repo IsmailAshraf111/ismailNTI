@@ -1,9 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ContactMeService } from '../../services/contact-me.service';
 import {
+  FormArray,
   FormBuilder,
   FormGroup,
   FormsModule,
+  ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -11,13 +13,14 @@ import { IContact } from '../../models/icontact';
 import { InputComponent } from '../../../../shared/input/input.component';
 import { IGetContact } from '../../models/iget-contact';
 import { Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-me-management',
   templateUrl: './contact-me-management.component.html',
   styleUrls: ['./contact-me-management.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule, InputComponent],
+  imports: [FormsModule, CommonModule, InputComponent, TranslatePipe, ReactiveFormsModule],
 })
 export class ContactMeManagementComponent implements OnInit {
   contactData: IContact = {} as IContact;
@@ -30,51 +33,92 @@ export class ContactMeManagementComponent implements OnInit {
 
   constructor() {
     this.contactForm = this.fb.group({
-      headerContact: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      titleBox: ['', [Validators.required]],
-      descriptionBox: ['', [Validators.required]],
-      linkIconOne: ['', [Validators.required]],
-      descIconOne: ['', [Validators.required]],
-      iconeOne: ['', [Validators.required]],
-      linkIconTwo: ['', [Validators.required]],
-      descIconTwo: ['', [Validators.required]],
-      iconeTwo: ['', [Validators.required]],
+      boxTitle: ['', [Validators.required]],
+      // iconOneLink: ['', [Validators.required]],
+      // iconOneName: ['', [Validators.required]],
+      // iconOne: ['', [Validators.required]],
+      // IconTwoLink: ['', [Validators.required]],
+      // IconTwoName: ['', [Validators.required]],
+      // iconTwo: ['', [Validators.required]],
+      // phoneNumber: ['', Validators.required],
+      communication: this.fb.array([this.createCommunicationGroup()]),
+      phoneNumber: [
+        '',
+        [Validators.required, Validators.pattern(/^20(10|11|12|15)[0-9]{8}$/)],
+      ],
       _id: [''],
     });
+  }
+
+  createCommunicationGroup(): FormGroup {
+    return this.fb.group({
+      link: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      icon: ['', [Validators.required]],
+    });
+  }
+
+  get communication(): FormArray {
+    return this.contactForm.get('communication') as FormArray;
+  }
+
+  addCommunication() {
+    this.communication.push(this.createCommunicationGroup());
+  }
+
+  removeCommunication(index: number): void {
+    if (this.communication.length > 0) {
+      this.communication.removeAt(index);
+    }
   }
 
   ngOnInit(): void {
     this.contactService.getContact().subscribe((data) => {
       this.GetContactData = data;
       this.contactForm.patchValue({
-        headerContact: this.GetContactData.headerContact,
         description: this.GetContactData.description,
-        titleBox: this.GetContactData.titleBox,
-        descriptionBox: this.GetContactData.descriptionBox,
-        linkIconOne: this.GetContactData.linkIconOne,
-        descIconOne: this.GetContactData.descIconOne,
-        iconeOne: this.GetContactData.iconeOne,
-        linkIconTwo: this.GetContactData.linkIconTwo,
-        descIconTwo: this.GetContactData.descIconTwo,
-        iconeTwo: this.GetContactData.iconeTwo,
+        boxTitle: this.GetContactData.boxTitle,
+        // iconOneLink: this.GetContactData.iconOneLink,
+        // iconOneName: this.GetContactData.iconOneName,
+        // iconOne: this.GetContactData.iconOne,
+        // IconTwoLink: this.GetContactData.IconTwoLink,
+        // IconTwoName: this.GetContactData.IconTwoName,
+        // iconTwo: this.GetContactData.iconTwo,
+        phoneNumber: this.GetContactData.phoneNumber,
         _id: this.GetContactData._id,
+
+       
       });
+      this.communication.clear()
+
+      this.GetContactData.communication.forEach((commou)=>{
+        this.communication.push(
+          this.fb.group({
+            link: [commou.link],
+            name: [commou.name],
+            icon: [commou.icon],
+          })
+        )
+
+      })
+
     });
   }
 
   onSubmit(): void {
     const formData: IContact = {
-      headerContact: this.contactForm.value.headerContact,
       description: this.contactForm.value.description,
-      titleBox: this.contactForm.value.titleBox,
-      descriptionBox: this.contactForm.value.descriptionBox,
-      linkIconOne: this.contactForm.value.linkIconOne,
-      descIconOne: this.contactForm.value.descIconOne,
-      iconeOne: this.contactForm.value.iconeOne,
-      linkIconTwo: this.contactForm.value.linkIconTwo,
-      descIconTwo: this.contactForm.value.descIconTwo,
-      iconeTwo: this.contactForm.value.iconeTwo,
+      boxTitle: this.contactForm.value.boxTitle,
+      // iconOneLink: this.contactForm.value.iconOneLink,
+      // iconOneName: this.contactForm.value.iconOneName,
+      // iconOne: this.contactForm.value.iconOne,
+      // IconTwoLink: this.contactForm.value.IconTwoLink,
+      // IconTwoName: this.contactForm.value.IconTwoName,
+      // iconTwo: this.contactForm.value.iconTwo,
+      phoneNumber: this.contactForm.value.phoneNumber,
+      communication: this.contactForm.value.communication
+    
     };
     const formDataUpdate: IGetContact = {
       ...formData,
@@ -93,8 +137,14 @@ export class ContactMeManagementComponent implements OnInit {
         this.contactData = data;
         console.log('Contact created successfully!', data);
         this.router.navigate(['/contact-me']);
-
       });
     }
+  }
+
+  getCommunicationGroup(index: number): FormGroup {
+    return this.communication.at(index) as FormGroup;
+  }
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
   }
 }

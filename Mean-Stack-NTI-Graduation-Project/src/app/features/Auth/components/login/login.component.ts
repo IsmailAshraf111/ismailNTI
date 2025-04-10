@@ -3,6 +3,7 @@ import { AuthAdminService } from '../../services/auth-admin.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   myForm!: FormGroup;
   msg: String = '';
 
-  constructor(private authService: AuthAdminService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.myForm = new FormGroup({

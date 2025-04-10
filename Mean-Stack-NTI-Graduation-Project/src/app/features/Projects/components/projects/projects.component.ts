@@ -92,17 +92,7 @@ export class ProjectsComponent implements OnInit {
       },
     });
   }
-
-  // updateProject(_id: number, data: IGetProjects): void {
-  //   this.projectService.updateProject(_id, data).subscribe({
-  //     next: (res) => {
-  //       console.log('Project updated successfully:', res);
-  //       this.getProjects();
-  //     }
-  //     error: (error) => {
-  //       console.error('Error updating project:', error);
-  //     },
-  //   });
-
-  // }
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
 }

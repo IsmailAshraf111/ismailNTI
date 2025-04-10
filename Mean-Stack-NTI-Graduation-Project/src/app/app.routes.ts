@@ -8,8 +8,8 @@ import { HomeManagementComponent } from './features/Home/components/home-managem
 import { AboutManagementComponent } from './features/About/components/about-management/about-management.component';
 import { ProjectsManagementComponent } from './features/Projects/components/projects-management/projects-management.component';
 import { ContactMeManagementComponent } from './features/Contact-me/components/contact-me-management/contact-me-management.component';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { RegisterComponent } from './features/Auth/components/register/register.component';
 
 export const routes: Routes = [
   { path: 'adminLogin', component: LoginComponent },
@@ -17,20 +17,17 @@ export const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'abuotMe', component: AboutComponent },
   { path: 'contact-me', component: ContactMeComponent },
-  { path: 'homeManagement', component: HomeManagementComponent },
-  { path: 'projects-meManagement', component: ProjectsManagementComponent },
-  { path: 'projects-meManagement/:id', component: ProjectsManagementComponent },
+  { path: 'homeManagement', component: HomeManagementComponent, canActivate:[AuthGuard] },
+  { path: 'projects-meManagement', component: ProjectsManagementComponent,  canActivate:[AuthGuard] },
+  { path: 'projects-meManagement/:id', component: ProjectsManagementComponent,  canActivate:[AuthGuard] },
+  { path: 'create-account', component: RegisterComponent },
 
-  { path: 'about-meManagement', component: AboutManagementComponent },
+
+
+  { path: 'about-meManagement', component: AboutManagementComponent,  canActivate:[AuthGuard] },
   {
     path: 'contact-me-management',
-    component: ContactMeManagementComponent,
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard],
-    children: [],
+    component: ContactMeManagementComponent,  canActivate:[AuthGuard]
   },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];

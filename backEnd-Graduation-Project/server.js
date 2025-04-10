@@ -1,14 +1,13 @@
 const express = require("express");
-const port = 3000;
+const port = 4000;
 const app = express();
 const connectDB = require("./config/MongoDBconnection");
 connectDB();
 const homeRoutes = require("./routes/home-route");
 const projectsRoutes = require("./routes/prjects-route");
-const adminLoginRouter = require("./routes/adminLoginRouter");
+const userRouter = require("./routes/userRouter");
 const aboutRouter = require("./routes/about-me-route");
 const contactMeRouter = require('./routes/contact-me-route')
-
 const dotenv = require("dotenv");
 const cors = require("cors");
 
@@ -38,7 +37,7 @@ app.use('/uploads', express.static('uploads'));
 
 // use adminLogin
 
-app.use("/adminLogin", adminLoginRouter);
+app.use("/users", userRouter);
 
 // use about
 
@@ -47,6 +46,7 @@ app.use("/about", aboutRouter);
 // use contact-me
 
 app.use('/contact', contactMeRouter)
+
 
 // // use projects
 

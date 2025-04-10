@@ -1,43 +1,13 @@
 <div class="container">
-  <form>
+  <form [formGroup]="contactForm">
     <div class="editH">
-      <h1 class="text-center">Edit Contact Me</h1>
+      <h1 class="text-center">
+        {{ "app.contact.contact-management.edit-contact-page" | translate }}
+      </h1>
     </div>
     <div class="form-group">
       <app-input
-        [label]="'headerContact'"
-        [placeholder]="'Edit headerContact'"
-        [formGroup]="contactForm"
-        [controlName]="'headerContact'"
-        [type]="'text'"
-        [className]="'form-control'"
-      ></app-input>
-    </div>
-
-    <div class="form-group">
-      <app-input
-        [label]="'titleBox'"
-        [placeholder]="'Edit titleBox'"
-        [formGroup]="contactForm"
-        [controlName]="'titleBox'"
-        [type]="'text'"
-        [className]="'form-control'"
-      ></app-input>
-    </div>
-    <div class="form-group">
-      <app-input
-        [label]="'descriptionBox'"
-        [placeholder]="'Edit descriptionBox'"
-        [formGroup]="contactForm"
-        [controlName]="'descriptionBox'"
-        [type]="'text'"
-        [className]="'form-control'"
-      ></app-input>
-    </div>
-    <div class="form-group">
-      <app-input
-        [label]="'Description'"
-        [placeholder]="'Edit Description'"
+        [label]="'app.contact.contact-management.description' | translate"
         [formGroup]="contactForm"
         [controlName]="'description'"
         [type]="'text'"
@@ -46,103 +16,142 @@
     </div>
     <div class="form-group">
       <app-input
-        [label]="'linkIconOne'"
-        [placeholder]="'Edit linkIconOne'"
+        [label]="'app.contact.contact-management.box-title' | translate"
         [formGroup]="contactForm"
-        [controlName]="'linkIconOne'"
+        [controlName]="'boxTitle'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div>
+    <!-- <div class="form-group">
+      <app-input
+        [label]="'boxDescription'"
+        [placeholder]="'Edit boxDescription'"
+        [formGroup]="contactForm"
+        [controlName]="'boxDescription'"
+        [type]="'text'"
+        [className]="'form-control'"
+      ></app-input>
+    </div> -->
+
+    <div formArrayName="communication">
+      @for(commun of communication.controls; track commun; let i = $index ){
+      <div [formGroupName]="i" class="service-item">
+        <div class="service-inputs mt-2">
+          <div class="form-group">
+            <app-input
+              [label]="
+                'app.contact.contact-management.link' | translate
+              "
+              [formGroup]="getCommunicationGroup(i)"
+              [controlName]="'link'"
+              [type]="'text'"
+              [className]="'form-control'"
+            ></app-input>
+            <div class="form-group">
+              <app-input
+                [label]="
+                  'app.contact.contact-management.name' | translate
+                "
+                [formGroup]="getCommunicationGroup(i)"
+                [controlName]="'name'"
+                [type]="'text'"
+                [className]="'form-control'"
+              ></app-input>
+              <div class="form-group">
+                <app-input
+                  [label]="
+                    'app.contact.contact-management.icon' | translate
+                  "
+                  [formGroup]="getCommunicationGroup(i)"
+                  [controlName]="'icon'"
+                  [type]="'text'"
+                  [className]="'form-control'"
+                ></app-input>
+              </div>
+              <button
+                type="button"
+                class="trash"
+                (click)="removeCommunication(i)"
+                [disabled]="
+                  i === 0 && contactForm.value.communication.length <= 1
+                "
+              >remov</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+    <button type="button" (click)="addCommunication()">add</button>
+
+    </div>
+
+    <!-- <div class="form-group">
+      <app-input
+        [label]="'app.contact.contact-management.icon-one-link' | translate"
+        [formGroup]="contactForm"
+        [controlName]="'iconOneLink'"
         [type]="'text'"
         [className]="'form-control'"
       ></app-input>
     </div>
     <div class="form-group">
       <app-input
-        [label]="'descIconOne'"
-        [placeholder]="'Edit descIconOne'"
+        [label]="'app.contact.contact-management.icon-one-name' | translate"
         [formGroup]="contactForm"
-        [controlName]="'descIconOne'"
+        [controlName]="'iconOneName'"
         [type]="'text'"
         [className]="'form-control'"
       ></app-input>
     </div>
     <div class="form-group">
       <app-input
-        [label]="'iconeOne'"
-        [placeholder]="'Edit iconeOne'"
+        [label]="'app.contact.contact-management.icon-one' | translate"
         [formGroup]="contactForm"
-        [controlName]="'iconeOne'"
+        [controlName]="'iconOne'"
         [type]="'text'"
         [className]="'form-control'"
       ></app-input>
     </div>
     <div class="form-group">
       <app-input
-        [label]="'linkIconTwo'"
-        [placeholder]="'Edit linkIconTwo'"
+        [label]="'app.contact.contact-management.icon-two-link' | translate"
         [formGroup]="contactForm"
-        [controlName]="'linkIconTwo'"
+        [controlName]="'IconTwoLink'"
         [type]="'text'"
         [className]="'form-control'"
       ></app-input>
     </div>
     <div class="form-group">
       <app-input
-        [label]="'descIconTwo'"
-        [placeholder]="'Edit descIconTwo'"
+        [label]="'app.contact.contact-management.icon-two-name' | translate"
         [formGroup]="contactForm"
-        [controlName]="'descIconTwo'"
+        [controlName]="'IconTwoName'"
         [type]="'text'"
         [className]="'form-control'"
       ></app-input>
     </div>
     <div class="form-group">
       <app-input
-        [label]="'iconeTwo'"
-        [placeholder]="'Edit iconeTwo'"
+        [label]="'app.contact.contact-management.icon-two' | translate"
         [formGroup]="contactForm"
-        [controlName]="'iconeTwo'"
+        [controlName]="'iconTwo'"
         [type]="'text'"
         [className]="'form-control'"
       ></app-input>
+    </div> -->
+    <div class="form-group">
+      <app-input
+        [label]="'app.contact.contact-management.phone-number' | translate"
+        [formGroup]="contactForm"
+        [controlName]="'phoneNumber'"
+        [type]="'text'"
+        [className]="'form-control'"
+      >
+      </app-input>
     </div>
-    <button class="btn btn-primary" (click)="onSubmit()">onSubmit</button>
+    <button class="btn btn-primary" (click)="onSubmit()">
+      {{ "app.contact.contact-management.submit" | translate }}
+    </button>
   </form>
 </div>
-
-<!-- <div class="container">
-  <div class="editH">
-    <h1 class="text-center">Edit Contact Me</h1>
-  </div>
-  <form (submit)="createContact()">
-    <input
-      [(ngModel)]="contact.titleBox"
-      placeholder="Edit Title"
-      name="titleBox"
-    />
-    <input
-      [(ngModel)]="contact.description"
-      placeholder="Edit Description"
-      name="description"
-    />
-    <input
-      [(ngModel)]="contact.iconOne"
-      placeholder="Edit Icon 1"
-      name="iconOne"
-    />
-    <input
-      [(ngModel)]="contact.descIconOne"
-      placeholder="Edit Icon 1 Title"
-      name="descIconOne"
-    />
-    <input
-      [(ngModel)]="contact.iconTwo"
-      placeholder="Edit Icon 2"
-      name="iconTwo"
-    />
-    <input
-      [(ngModel)]="contact.descIconTwo"
-      placeholder="Edit Icon 2 Title"
-      name="descIconTwo"
-    />
-    <button type="submit">Update</button>
-  </form>
-</div> -->

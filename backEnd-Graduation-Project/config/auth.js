@@ -33,3 +33,10 @@ exports.authMiddleware = (req, res, next) => {
     return res.status(500).send(err.message);
   }
 };
+
+// exports.adminMiddleware = (req, res, next) => {
+//   if (req.user?.role !== 'admin') {
+//     return res.status(403).send("Access denied, admin privileges required");
+//   }
+//   next();
+// };

@@ -38,4 +38,7 @@ export class AboutComponent implements OnInit {
       console.log(this.about);
     });
   }
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
 }

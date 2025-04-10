@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { LocalizationService } from '../../../core/services/localization.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
+import { AuthService } from '../../../features/Auth/services/auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -24,14 +25,17 @@ export class NavbarComponent {
   language: 'ar' | 'en' = 'ar';
 
   localStorage = window.localStorage;
+
+  userData: any 
   
 
-  constructor(private authService: AuthAdminService, private router: Router) {
+  constructor(private router: Router) {
     this.language = this.localizationService.getLanguage();
   }
 
   private localizationService = inject(LocalizationService);
   private translate = inject(TranslateService);
+  private authService = inject(AuthService)
 
   switchLanguage() {
     this.language = this.language === 'ar' ? 'en' : 'ar';
@@ -43,6 +47,20 @@ export class NavbarComponent {
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/adminLogin']);
+  }
+
+  getUser(){
+    this.authService.getUser().subscribe({
+      next(value) {
+        console.log('user', value);
+      this.userData  
+        
+      },
+      error(err) {
+        console.log(err, 'usre');
+        
+      },
+    })
   }
 
   isLoggedIn(): boolean {

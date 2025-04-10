@@ -40,6 +40,7 @@ export class InputComponent {
   @Input() formGroup!: FormGroup;
   @Input() className: string = 'input-field';
   @Input() controlName!: string;
+  
 
   focused: boolean = false;
 

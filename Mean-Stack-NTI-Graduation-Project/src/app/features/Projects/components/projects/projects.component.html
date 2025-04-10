@@ -9,9 +9,9 @@
       <p-button
         icon="pi pi-folder-plus"
         [label]="'app.projects.add-project-btn' | translate"
-
         routerLink="/projects-meManagement"
         class="add-btn"
+        *ngIf="isLoggedIn()"
       ></p-button>
     </div>
     <div
@@ -26,6 +26,7 @@
             class="delete-btn"
             [pTooltip]="'app.projects.delete-project-btn' | translate"
             tooltipPosition="top"
+            *ngIf="isLoggedIn()"
           >
           </p-button>
           <p-button
@@ -36,6 +37,7 @@
             (click)="getProjectById(project._id)"
             routerLink="/projects-meManagement"
             [queryParams]="{ id: project._id }"
+            *ngIf="isLoggedIn()"
           ></p-button>
         </div>
         <img [src]="'http://localhost:3000' + project.imgUrl" />
@@ -66,9 +68,10 @@
 
     <div *ngIf="projects.length === 0 && !isLoading">
       <div class="not-found d-flex justify-content-center align-items-center">
-        <h2 class="fw-bold">{{ "app.projects.projects-not-found" | translate }}</h2>
+        <h2 class="fw-bold">
+          {{ "app.projects.projects-not-found" | translate }}
+        </h2>
       </div>
-
     </div>
   </div>
 </div>

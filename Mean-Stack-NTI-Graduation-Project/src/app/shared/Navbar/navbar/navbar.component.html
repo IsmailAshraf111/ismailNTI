@@ -45,7 +45,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link logout" *ngIf="isLoggedIn()" (click)="logout()">{{
-            "app.nav.logout" | translate
+            "app.nav.log-out" | translate
           }}</a>
         </li>
         <li class="nav-item login">
@@ -57,7 +57,17 @@
             ><span>#</span>{{ "app.nav.login" | translate }}</a
           >
         </li>
+        <li class="nav-item" *ngIf="!isLoggedIn()">
+          <a class="nav-link" routerLink="/create-account" routerLinkActive="active"
+   
+            ><span>#</span>{{ "app.nav.register" | translate }}</a
+          >
+        </li>
         <li class="nav-item"></li>
+
+        <div>
+          {{}}
+        </div>
       </ul>
       <p-button
         (click)="switchLanguage()"

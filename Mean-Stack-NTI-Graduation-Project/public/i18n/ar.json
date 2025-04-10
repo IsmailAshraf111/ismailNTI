@@ -7,22 +7,22 @@
       "services": "الخدمات",
       "contact": "تواصل معي",
       "login": "تسجيل الدخول",
-      "register": "إنشاء حساب"
+      "register": "إنشاء حساب",
+      "log-out": "تسجيل الخروج"
+    
     },
     "home": {
       "contact": "تواصل معنا =>",
       "update-home-btn": "تحديث الصفحة",
       "home-management": {
-        "edit-home-page" : "تعديل الصفحة الرئيسية",
+        "edit-home-page": "تعديل الصفحة الرئيسية",
         "name": "الاسم",
         "descriptionName": "اسم الوصف",
         "description": "الوصف",
         "img": "الصورة",
         "update-btn": "تحديث",
         "create-btn": "انشاء"
-        
       }
-   
     },
     "projects": {
       "projects": "المشاريع",
@@ -32,7 +32,7 @@
       "delete-project-btn": "حذف المشروع",
       "projects-not-found": "لم يتم العثور على مشاريع",
       "projects-management": {
-        "create-project" : "انشاء مشروع",
+        "create-project": "اضافة مشروع",
         "tecnologies": "التقنيات",
         "title": "العنوان",
         "description": "الوصف",
@@ -51,10 +51,52 @@
       "other": "اخرى",
       "tools": "الادوات",
       "freameworks": "أطر العمل",
-      "update-about-btn": "تحديث المعلومات"
+      "update-about-btn": "تحديث المعلومات",
+      "about-management": {
+        "edit-about-page": "تعديل معلوماتي",
+        "languages": "لغات البرمجة",
+        "databases": "قواعد البيانات",
+        "tools": "الادوات",
+        "other-skills": "اخرى", 
+        "frameworks": "اطر العمل",
+        "name": "الاسم",
+        "descriptionName": "اسم الوصف",
+        "description": "الوصف",
+        "img": "الصورة",
+        "update-btn": "تحديث",
+        "create-btn": "انشاء"
+      }
     },
     "contact": {
-      "update-contact-btn": "تحديث التواصل"
+      "contacts": "التواصل",
+      "update-contact-btn": "تحديث التواصل",
+      "contact-management": {
+        "edit-contact-page": "تعديل التواصل",
+        "description": "الوصف",
+        "box-title": "عنوان الصندوق",
+        "link": "الرابط",
+        "name": "الاسم",
+        "icon": "ايقون",
+        "submit": "ارسال",
+        "phone-number": "رقم الهاتف"
+
+    
+      },
+      "whatsapp": {
+        "send-whatsapp-message": "ارسال رسالة واتساب",
+        "name": "إسمك",
+        "your-message": "رسالتك",
+        "send": "ارسال"
+      }
+  
+
+    },
+    "footer": {
+      "email": "البريد الإلكتروني",
+      "name": "الاسم",
+      "all-rights-reserved": "جميع الحقوق محفوظة",
+      "media": "الوسائط"
+      
     },
 
     "validation": {

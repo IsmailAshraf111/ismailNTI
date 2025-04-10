@@ -1,36 +1,36 @@
-
 :root {
-    --primary: #b152da;
-    --primary-op: #b152da1a;
-    --gray: #96a2b9;
-    --gray-op: #96a2b91a;
-    --background: #262b33;
-    --white: #ffffff;
+  --primary: #b152da;
+  --primary-op: #b152da1a;
+  --gray: #96a2b9;
+  --gray-op: #96a2b91a;
+  --background: #262b33;
+  --white: #ffffff;
+}
+.footer {
+  border-top: 1px solid var(--gray);
+  color: var(--white);
+  font-size: 1.2rem;
+  .footer .ismail p span {
+    color: var(--gray);
   }
-.footer{
-    border-top: 1px solid var(--gray) ;
-    color: var(--white);
-    font-size: 1.2rem;
 
-}
-
-.footer .ismail p span {
+  .copyright {
     color: var(--gray);
+  }
 
-}
-
-footer .copyright{
-    color: var(--gray);
-
-}
-
-.footer .copyright a {
+  .copyright a {
     color: var(--white) !important;
-    
-}
+  }
 
-.footer .media{
-
+  .media {
     font-size: 1.5rem;
-    
+  }
+
+  .ismail .mail{
+    color: var(--gray);
+
+  }
+  a {
+    text-decoration: none;
+  }
 }
